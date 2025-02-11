@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sehati_al_an_app/src/core/app_prefrences/app_prefrences.dart';
+import 'package:sehati_al_an_app/src/core/resourses/language_manager.dart';
 import 'package:sehati_al_an_app/src/core/routes/app_router.dart';
 import 'package:sehati_al_an_app/src/core/services/dependency_injection.dart';
 
@@ -44,6 +45,35 @@ class _MyAppState extends State<MyApp> {
           ),
         );
       },
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final appPreferences = sl<AppPreferences>();
+
+    return Scaffold(
+      appBar: AppBar(title: Text('title'.tr())),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () async {
+            // Change language in preferences
+            await appPreferences.changeAppLanguage();
+
+            // Update the UI language
+            if (context.locale == englishLocal) {
+              context.setLocale(arabicLocal);
+            } else {
+              context.setLocale(englishLocal);
+            }
+          },
+          child: Text('next_events'.tr()),
+        ),
+      ),
     );
   }
 }

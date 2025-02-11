@@ -7,44 +7,45 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../helpers/enums.dart';
 import '../services/dependency_injection.dart';
 
-// UserModel skipLoginModel = UserModel(
-//     displayName: sl<AppPreferences>().skipLogin,
-//     accessToken: '',
-//     refreshToken: '',
-//     role: '',
-//     userId: '',
-//     uuid: '');
+
 
 class AppPreferences {
   final SharedPreferences _sharedPreferences;
 
   AppPreferences(this._sharedPreferences);
 
-  String userPrefs = 'user';
-  String language = 'language';
+  static const String languageKey = 'language';
   String onBoarding = 'onBoarding';
+  String userPrefs = 'user';
   String skipLogin = 'skip';
 
-  // /// user
-  // UserModel? getUser() {
-  //   String? userPref = _sharedPreferences.getString(userPrefs);
-  //   if (userPref == null) {
-  //     return null;
-  //   }
-  //
-  //   Map<String, dynamic> userMap = jsonDecode(userPref) as Map<String, dynamic>;
-  //   return UserModel.fromJson(userMap);
-  // }
-  //
-  // Future<void> setUser(UserModel model) async {
-  //   await _sharedPreferences.setString(userPrefs, jsonEncode(model.toJson()));
-  // }
+  // Language methods
+  Future<void> setAppLanguage(String languageCode) async {
+    await _sharedPreferences.setString(languageKey, languageCode);
+  }
 
+  String getAppLanguage() {
+    return _sharedPreferences.getString(languageKey) ?? LanguageType.arabic.getValue;
+  }
+
+  Future<Locale> getLocal() async {
+    String currentLang = getAppLanguage();
+    return currentLang == LanguageType.arabic.getValue ? arabicLocal : englishLocal;
+  }
+
+  Future<void> changeAppLanguage() async {
+    String currentLang = getAppLanguage();
+    if (currentLang == LanguageType.arabic.getValue) {
+      await setAppLanguage(LanguageType.english.getValue);
+    } else {
+      await setAppLanguage(LanguageType.arabic.getValue);
+    }
+  }
+
+  // Other existing methods...
   Future<void> removeUser() async {
     await _sharedPreferences.remove(userPrefs);
   }
-
-  // onboarding
 
   Future<void> setOnBoarding() async {
     await _sharedPreferences.setBool(onBoarding, true);
@@ -53,42 +54,89 @@ class AppPreferences {
   bool getOnBoarding() {
     return _sharedPreferences.getBool(onBoarding) ?? false;
   }
-
-  // bool isSkipLogin() {
-  //   final isSkip = getUser()?.displayName ?? false;
-  //   return isSkip == skipLogin;
-  // }
-
-  /// language
-
-  String getAppLang() {
-    String? lang = _sharedPreferences.getString(language);
-    //  return LanguageType.english.getValue();
-
-    if (lang != null && lang.isNotEmpty) {
-      return lang;
-    } else {
-      return LanguageType.arabic.getValue;
-    }
-  }
-
-  Future<void> changeAppLang() async {
-    String currentLang = getAppLang();
-    if (currentLang == LanguageType.arabic.getValue) {
-      await _sharedPreferences.setString(
-          language, LanguageType.english.getValue);
-    } else {
-      await _sharedPreferences.setString(
-          language, LanguageType.arabic.getValue);
-    }
-  }
-
-  Future<Locale> getLocal() async {
-    String currentLang = getAppLang();
-    if (currentLang == LanguageType.arabic.getValue) {
-      return arabicLocal;
-    } else {
-      return englishLocal;
-    }
-  }
 }
+// // UserModel skipLoginModel = UserModel(
+// //     displayName: sl<AppPreferences>().skipLogin,
+// //     accessToken: '',
+// //     refreshToken: '',
+// //     role: '',
+// //     userId: '',
+// //     uuid: '');
+//
+// class AppPreferences {
+//   final SharedPreferences _sharedPreferences;
+//
+//   AppPreferences(this._sharedPreferences);
+//
+//   String userPrefs = 'user';
+//   String language = 'language';
+//   String onBoarding = 'onBoarding';
+//   String skipLogin = 'skip';
+//
+//   // /// user
+//   // UserModel? getUser() {
+//   //   String? userPref = _sharedPreferences.getString(userPrefs);
+//   //   if (userPref == null) {
+//   //     return null;
+//   //   }
+//   //
+//   //   Map<String, dynamic> userMap = jsonDecode(userPref) as Map<String, dynamic>;
+//   //   return UserModel.fromJson(userMap);
+//   // }
+//   //
+//   // Future<void> setUser(UserModel model) async {
+//   //   await _sharedPreferences.setString(userPrefs, jsonEncode(model.toJson()));
+//   // }
+//
+//   Future<void> removeUser() async {
+//     await _sharedPreferences.remove(userPrefs);
+//   }
+//
+//   // onboarding
+//
+//   Future<void> setOnBoarding() async {
+//     await _sharedPreferences.setBool(onBoarding, true);
+//   }
+//
+//   bool getOnBoarding() {
+//     return _sharedPreferences.getBool(onBoarding) ?? false;
+//   }
+//
+//   // bool isSkipLogin() {
+//   //   final isSkip = getUser()?.displayName ?? false;
+//   //   return isSkip == skipLogin;
+//   // }
+//
+//   /// language
+//
+//   String getAppLang() {
+//     String? lang = _sharedPreferences.getString(language);
+//     //  return LanguageType.english.getValue();
+//
+//     if (lang != null && lang.isNotEmpty) {
+//       return lang;
+//     } else {
+//       return LanguageType.arabic.getValue;
+//     }
+//   }
+//
+//   Future<void> changeAppLang() async {
+//     String currentLang = getAppLang();
+//     if (currentLang == LanguageType.arabic.getValue) {
+//       await _sharedPreferences.setString(
+//           language, LanguageType.english.getValue);
+//     } else {
+//       await _sharedPreferences.setString(
+//           language, LanguageType.arabic.getValue);
+//     }
+//   }
+//
+//   Future<Locale> getLocal() async {
+//     String currentLang = getAppLang();
+//     if (currentLang == LanguageType.arabic.getValue) {
+//       return arabicLocal;
+//     } else {
+//       return englishLocal;
+//     }
+//   }
+// }
