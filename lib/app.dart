@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void didChangeDependencies() {
-    _appPreferences.getLocal().then((local) {
+    _appPreferences.getLocale().then((local) {
       return context.setLocale(local);
     });
     super.didChangeDependencies();

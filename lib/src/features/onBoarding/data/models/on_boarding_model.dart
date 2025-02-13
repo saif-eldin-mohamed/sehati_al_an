@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
+import '../../../../core/resourses/lanuages_strings.dart';
 import '../../../../core/resourses/theming/images.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class OnboardingModel extends Equatable {
   final int id;
@@ -26,23 +28,23 @@ class OnboardingModel extends Equatable {
       ];
 }
 
-const List<OnboardingModel> onBoardingData = [
+ List<OnboardingModel> onBoardingData = [
   OnboardingModel(
     id: 1,
-    title: 'Find Your Doctor',
+    title: AppStrings.findYourDoctor.tr(),
     description: 'Easily search for doctors based on location, \n specialty, and availability.',
     image: ImagesManager.onBoarding_1,
   ),
   OnboardingModel(
     id: 2,
-    title: 'Book a Consultation',
+    title: AppStrings.bookAConsultation.tr(),
     description:
         'Schedule a video consultation at a time that \n works best for you.',
     image: ImagesManager.onBoarding_2,
   ),
   OnboardingModel(
     id: 3,
-    title: 'Ask Doctors',
+    title: AppStrings.askDoctors.tr(),
     description:
         'Send your questions to doctors through \n messages anytime.',
     image: ImagesManager.onBoarding_3,

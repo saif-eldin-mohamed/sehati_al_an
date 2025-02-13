@@ -18,7 +18,7 @@ void main() async {
   await EasyLocalization.ensureInitialized();
 
   final appPreferences = sl<AppPreferences>();
-  final Locale initialLocale = await appPreferences.getLocal();
+  final Locale initialLocale = await appPreferences.getLocale();
 
   Bloc.observer = MyBlocObserver();
 

@@ -12,10 +12,15 @@ class OnBoardingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      model.image,
-      width: double.infinity,
-      fit: BoxFit.cover,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Image.asset(
+          model.image,
+          width: double.infinity,
+          height: constraints.maxHeight,
+          fit: BoxFit.contain,
+        );
+      },
     );
   }
 }
