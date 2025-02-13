@@ -69,6 +69,7 @@ dev_dependencies:
   easy_stepper: ^0.8.5+1
   flutter_secure_storage: ^9.2.4
   toastification: ^2.3.0
+  animate_do: ^4.0.1
 
   #  google_maps_flutter: ^2.6.1
 #  geocoding: ^3.0.0
@@ -104,6 +105,45 @@ flutter:
     - assets/lottie/
     - assets/translations/ar-SA.json
     - assets/translations/en-US.json
+
+
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Lato-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Lato-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Lato-ExtraBold.ttf
+          weight: 800
+
+    - family: SF Pro Display
+      fonts:
+        - asset: assets/fonts/FontsFree-Net-SFProDisplay-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/FontsFree-Net-SFProDisplay-Semibold.ttf
+          weight: 600
+
+    - family: SF Pro Text
+      fonts:
+        - asset: assets/fonts/FontsFree-Net-SFProText-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/FontsFree-Net-SFProText-Semibold.ttf
+          weight: 600
+
+    - family: Comfortaa
+      fonts:
+        - asset: assets/fonts/Comfortaa-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Comfortaa-Medium.ttf
+          weight: 500
+
+    - family: Rokkitt
+      fonts:
+        - asset: assets/fonts/Rokkitt-Regular.ttf
+          weight: 400
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -7,8 +7,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../helpers/enums.dart';
 import '../services/dependency_injection.dart';
 
-
-
 class AppPreferences {
   final SharedPreferences _sharedPreferences;
 
@@ -25,12 +23,15 @@ class AppPreferences {
   }
 
   String getAppLanguage() {
-    return _sharedPreferences.getString(languageKey) ?? LanguageType.arabic.getValue;
+    return _sharedPreferences.getString(languageKey) ??
+        LanguageType.arabic.getValue;
   }
 
   Future<Locale> getLocal() async {
     String currentLang = getAppLanguage();
-    return currentLang == LanguageType.arabic.getValue ? arabicLocal : englishLocal;
+    return currentLang == LanguageType.arabic.getValue
+        ? arabicLocal
+        : englishLocal;
   }
 
   Future<void> changeAppLanguage() async {

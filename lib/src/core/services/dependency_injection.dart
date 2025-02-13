@@ -23,15 +23,15 @@ class ServicesLocator {
     // Shared Preferences
     final sharedPreferences = await SharedPreferences.getInstance();
     sl.registerLazySingleton<ILocalStorage>(
-            () => SharedPrefHelper(sharedPreferences));
+        () => SharedPrefHelper(sharedPreferences));
 
     // Register AppPreferences
     sl.registerLazySingleton<AppPreferences>(
-            () => AppPreferences(sharedPreferences));
+        () => AppPreferences(sharedPreferences));
 
     // Secure Storage
     const secureStorage = FlutterSecureStorage();
     sl.registerLazySingleton<ISecureStorage>(
-            () => SecureStorageHelper(secureStorage));
+        () => SecureStorageHelper(secureStorage));
   }
 }
