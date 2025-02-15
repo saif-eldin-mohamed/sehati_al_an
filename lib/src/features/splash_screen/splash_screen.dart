@@ -41,7 +41,6 @@ class _SplashScreenState extends State<SplashScreen> {
                       fit: BoxFit.contain,
                     ),
                   ),
-
                   Positioned.fill(
                     top: 0,
                     left: 0,
@@ -54,7 +53,6 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                     ),
                   ),
-
                   Positioned.fill(
                     top: 0,
                     left: .8.sw,
@@ -67,7 +65,6 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                     ),
                   ),
-
                   Positioned.fill(
                     top: 0,
                     left: 0,
@@ -80,7 +77,6 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                     ),
                   ),
-
                   Positioned.fill(
                     top: 0,
                     left: .5.sw,
@@ -109,7 +105,6 @@ class _SplashScreenState extends State<SplashScreen> {
                       fit: BoxFit.contain,
                     ),
                   ),
-
                   Positioned.fill(
                     top: 0,
                     left: 0,
@@ -122,7 +117,6 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                     ),
                   ),
-
                   Positioned.fill(
                     top: 0,
                     left: .8.sw,

@@ -3,5 +3,24 @@
   "get_started": "Get Started",
   "find_your_doctor": "Find Your Doctor",
   "book_a_consultation": "Book a Consultation",
-  "ask_doctors": "Ask Doctors"
+  "ask_doctors": "Ask Doctors",
+  "doctor_search_description": "Easily search for doctors based on location, specialty, and availability.",
+  "consultation_description": "Schedule a video consultation at a time that works best for you.",
+  "ask_doctors_description": "Send your questions to doctors through messages anytime.",
+  "welcome_back": "Welcome Back!",
+  "sign_in_to_account": "Sign In to your account",
+  "email_address": "Email address",
+  "password": "Password",
+  "forgot_password": "Forgot password?",
+  "sign_in": "Sign in",
+  "dont_have_account": "Don’t have an account?",
+  "sign_up": "Sign up",
+  "or": "or",
+  "sign_in_google": "Sign in with Google",
+  "sign_in_facebook": "Sign in with Facebook",
+  "sign_in_apple": "Sign in with Apple",
+  "full_name": "Full name",
+  "reset_password": "Reset password"
+
+
 }

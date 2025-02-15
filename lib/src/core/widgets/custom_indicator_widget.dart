@@ -20,9 +20,9 @@ class IndicatorDotsWidget extends StatelessWidget {
         width: 8.w,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: isActive ? ColorsManager.primary : ColorsManager.background, // النقطة بيضاء من الداخل
+          color: isActive ? ColorsManager.primary : ColorsManager.background,
           border: Border.all(
-            color: isActive ? ColorsManager.primary : ColorsManager.background, // الإطار بلون الـ primary عند التفعيل وإلا grey
+            color: isActive ? ColorsManager.primary : ColorsManager.background,
             width: 2.w,
           ),
         ),

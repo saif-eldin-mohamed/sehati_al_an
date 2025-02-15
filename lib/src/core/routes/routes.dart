@@ -7,6 +7,8 @@ final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
 
 class Routes {
   static const String splashScreen = '/';
-  static const String homeScreen = '/home';
+  static const String signInScreen = '/signInScreen';
+  static const String signUpScreen = '/signUpScreen';
+  static const String forgetPasswordScreen = '/forgetPasswordScreen';
   static const String onBoardingScreen = '/onBoardingScreen';
 }

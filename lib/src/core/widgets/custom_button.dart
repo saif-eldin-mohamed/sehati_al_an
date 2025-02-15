@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/colors.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/styles.dart';
 
-
 class CustomButton extends StatelessWidget {
   final void Function()? onTap;
   final String? text;
@@ -44,8 +43,8 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width ?? MediaQuery.sizeOf(context).width,
-      height: height ?? 50,
+      width: width ?? 350.w,
+      height: height ?? 48.h,
       decoration: isBorderButton
           ? BoxDecoration(
               borderRadius: BorderRadius.circular(
@@ -68,11 +67,10 @@ class CustomButton extends StatelessWidget {
         ),
         color: color,
         child: text != null
-            ? Text(
-                text!,
+            ? Text(text!,
                 style: textStyle ??
-                    TextStylesManager.bold16.copyWith(color: ColorsManager.background)
-              )
+                    TextStylesManager.bold16
+                        .copyWith(color: ColorsManager.background))
             : icon ?? widget,
       ),
     );

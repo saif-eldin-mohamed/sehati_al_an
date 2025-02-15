@@ -3,5 +3,24 @@
   "get_started": "ابدأ الآن",
   "find_your_doctor": "ابحث عن طبيبك",
   "book_a_consultation": "احجز استشارة",
-  "ask_doctors": "اسأل الأطباء"
+  "ask_doctors": "اسأل الأطباء",
+  "doctor_search_description": "ابحث عن الأطباء بسهولة حسب الموقع والتخصص والتوفر.",
+  "consultation_description": "حدد موعد استشارة بالفيديو في الوقت الذي يناسبك.",
+  "ask_doctors_description": "أرسل أسئلتك إلى الأطباء عبر الرسائل في أي وقت.",
+  "welcome_back": "مرحبًا بعودتك!",
+  "sign_in_to_account": "قم بتسجيل الدخول إلى حسابك",
+  "email_address": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "forgot_password": "هل نسيت كلمة المرور؟",
+  "sign_in": "تسجيل الدخول",
+  "dont_have_account": "ليس لديك حساب؟",
+  "sign_up": "إنشاء حساب",
+  "or": "أو",
+  "sign_in_google": "تسجيل الدخول باستخدام Google",
+  "sign_in_facebook": "تسجيل الدخول باستخدام Facebook",
+  "sign_in_apple": "تسجيل الدخول باستخدام Apple",
+  "reset_password": "تغيير كلمة المرور",
+
+  "full_name": "الاسم بالكامل"
+
 }

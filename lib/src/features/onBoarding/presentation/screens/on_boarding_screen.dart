@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sehati_al_an_app/src/core/resourses/theming/colors.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/styles.dart';
 import 'package:sehati_al_an_app/src/core/routes/routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,12 +22,29 @@ class OnBoardingScreen extends StatefulWidget {
   State<OnBoardingScreen> createState() => _OnBoardingScreenState();
 }
 
-class _OnBoardingScreenState extends State<OnBoardingScreen> {                                final appPreferences = sl<AppPreferences>();
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  final appPreferences = sl<AppPreferences>();
+  late Locale currentLocale;
 
-@override
-  Widget build(BuildContext context) {final appPreferences = sl<AppPreferences>();
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    currentLocale = context.locale;
+  }
 
-return BlocProvider(
+  void _changeLanguage(Locale newLocale) async {
+    await appPreferences.setAppLanguage(newLocale.languageCode);
+    if (mounted) {
+      setState(() {
+        currentLocale = newLocale;
+      });
+      context.setLocale(newLocale);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
       create: (context) => OnBoardingCubit()..addPageListener(),
       child: Scaffold(
         body: BlocBuilder<OnBoardingCubit, OnBoardingState>(
@@ -41,48 +59,55 @@ return BlocProvider(
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Language Selection Button
                         Padding(
-                          padding: EdgeInsetsDirectional.only(start: 16.w),
+                          padding: EdgeInsetsDirectional.only(start: 12.w),
                           child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 8.w),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
+                              color: ColorsManager.primary.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(8.r),
                               border: Border.all(
-                                color: Theme.of(context).primaryColor,
+                                color: ColorsManager.primary,
                                 width: 1,
                               ),
                             ),
-                            child: TextButton(
-                              onPressed: () async {
-
-                                final newLocale = context.locale == englishLocal ? arabicLocal : englishLocal;
-
-                                // حفظ اللغة المختارة
-                                await appPreferences.setAppLanguage(newLocale.languageCode);
-
-                                // تغيير اللغة في الواجهة
-                                context.setLocale(newLocale);
-                              },
-
-
-                              child: Text(
-                                context.locale.languageCode == 'ar' ? 'English' : 'عربي',
+                            child: DropdownButtonHideUnderline(
+                              child: DropdownButton<Locale>(
+                                value: currentLocale,
+                                icon: const Icon(Icons.language,
+                                    color: ColorsManager.primary),
                                 style: TextStylesManager.regular14.copyWith(
-                                  color: Theme.of(context).primaryColor,
+                                  color: ColorsManager.primary,
                                 ),
+                                onChanged: (Locale? newLocale) {
+                                  if (newLocale != null) {
+                                    _changeLanguage(newLocale);
+                                  }
+                                },
+                                items: const [
+                                  DropdownMenuItem(
+                                    value: englishLocal,
+                                    child: Text('English',
+                                        style: TextStylesManager.regular14),
+                                  ),
+                                  DropdownMenuItem(
+                                    value: arabicLocal,
+                                    child: Text('عربي',
+                                        style: TextStylesManager.regular14),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
                         ),
-                        // Skip Button
                         Padding(
                           padding: EdgeInsetsDirectional.only(end: 16.w),
                           child: TextButton(
                             onPressed: () {
-                              // sl<AppPreferences>().setOnBoarding();
-                              Navigator.pushNamed(context, Routes.homeScreen);
+                              Navigator.pushNamed(context, Routes.signInScreen);
                             },
-                            child: Text(AppStrings.skip.tr(),
+                            child: Text(
+                              AppStrings.skip.tr(),
                               style: TextStylesManager.regular14,
                             ),
                           ),
@@ -138,7 +163,7 @@ return BlocProvider(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: List.generate(
                                 onBoardingData.length,
-                                    (index) => IndicatorDotsWidget(
+                                (index) => IndicatorDotsWidget(
                                   isActive: index == cubit.currentPage,
                                 ),
                               ),
@@ -165,13 +190,16 @@ return BlocProvider(
               child: CustomButton(
                 onTap: () {
                   if (cubit.currentPage == onBoardingData.length - 1) {
-                    // sl<AppPreferences>().setOnBoarding();
-                    Navigator.pushNamed(context, Routes.homeScreen);
+                    Navigator.pushNamed(context, Routes.signInScreen);
                   } else {
                     cubit.animateToNextPage();
                   }
                 },
-                text: AppStrings.getStarted.tr(),
+                text: cubit.currentPage == onBoardingData.length - 1
+                    ? (currentLocale == arabicLocal
+                        ? 'ابدأ الآن'
+                        : 'Get Started')
+                    : (currentLocale == arabicLocal ? 'التالي' : 'Next'),
               ),
             );
           },

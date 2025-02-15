@@ -30,7 +30,7 @@ void main() async {
   runApp(
     EasyLocalization(
       supportedLocales: const [arabicLocal, englishLocal],
-      fallbackLocale: englishLocal,
+      fallbackLocale: arabicLocal,
       path: assetsLocalization,
       startLocale: initialLocale, // Set initial locale from preferences
       child: Phoenix(
