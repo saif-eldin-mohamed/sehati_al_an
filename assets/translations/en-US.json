@@ -20,7 +20,22 @@
   "sign_in_facebook": "Sign in with Facebook",
   "sign_in_apple": "Sign in with Apple",
   "full_name": "Full name",
-  "reset_password": "Reset password"
-
-
+  "reset_password": "Reset password",
+"home": "Home",
+"appointments": "Appointments",
+"search": "Search",
+"notifications": "Notifications",
+"profile": "Profile",
+"welcome": "Welcome,",
+"bOOK_nOW": "BOOK NOW,",
+"choose_your-current_location": "Choose your current location",
+"book_your_online_consultation_easily": "Book your online\nconsultation easily",
+  "view_all": "View all",
+  "most_popular_specialties": "Most popular specialties",
+  "book_a_consultation_again": "Book a consultation again",
+  "dentistry": "Dentistry",
+  "psychiatry": "Psychiatry",
+  "neurology": "Neurology",
+  "internal_diseases": "Internal diseases",
+  "upcoming_appointments": "upcoming appointments"
 }

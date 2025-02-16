@@ -3,75 +3,68 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/colors.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/styles.dart';
 
+// Custom Button
 class CustomButton extends StatelessWidget {
-  final void Function()? onTap;
+  final VoidCallback? onTap;
   final String? text;
-  final Icon? icon;
-  final Widget? widget;
-  final EdgeInsets? padding;
-  final double? borderRadius;
-  final Color? color;
-  final Color? fontColor;
+  final Widget? child;
+  final EdgeInsetsGeometry padding;
+  final double borderRadius;
+  final Color backgroundColor;
+  final Color textColor;
   final double? width;
-  final double? height;
-  final TextStyle? textStyle;
-  final bool isBorderButton;
-  final Color? splashColor;
-  final Color? highlightColor;
+  final double height;
+  final bool outlined;
   final Color? borderColor;
 
-  // you can use Text or Icon or widget 'just One'
   const CustomButton({
     super.key,
     required this.onTap,
     this.text,
-    this.icon,
-    this.widget,
-    this.color = ColorsManager.primary,
-    this.splashColor,
-    this.highlightColor,
+    this.child,
+    this.padding = const EdgeInsets.symmetric(horizontal: 24),
+    this.borderRadius = 13,
+    this.backgroundColor = ColorsManager.primary,
+    this.textColor = Colors.white,
     this.width,
-    this.fontColor = Colors.white,
-    this.textStyle,
-    this.height,
-    this.isBorderButton = false,
-    this.borderRadius,
-    this.padding,
+    this.height = 48,
+    this.outlined = false,
     this.borderColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width ?? 350.w,
-      height: height ?? 48.h,
-      decoration: isBorderButton
+      width: width ?? double.infinity,
+      height: height,
+      decoration: outlined
           ? BoxDecoration(
-              borderRadius: BorderRadius.circular(
-                  borderRadius == null ? 13 : borderRadius!),
+              borderRadius: BorderRadius.circular(borderRadius),
               border: Border.all(
-                color: borderColor ?? Colors.black38,
+                color: borderColor ?? ColorsManager.textSecondary,
+                width: 1,
               ),
             )
           : null,
       child: MaterialButton(
         onPressed: onTap,
-        elevation: 0.0,
-        splashColor: splashColor ?? ColorsManager.primary.withOpacity(.1),
-        highlightColor: highlightColor ?? ColorsManager.primary.withOpacity(.1),
+        elevation: 0,
         highlightElevation: 0,
         padding: padding,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-              borderRadius == null ? 13.r : borderRadius!),
+          borderRadius: BorderRadius.circular(borderRadius),
         ),
-        color: color,
+        color: outlined ? Colors.transparent : backgroundColor,
         child: text != null
-            ? Text(text!,
-                style: textStyle ??
-                    TextStylesManager.bold16
-                        .copyWith(color: ColorsManager.background))
-            : icon ?? widget,
+            ? Text(
+                text!,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: outlined ? backgroundColor : textColor,
+                ),
+              )
+            : child,
       ),
     );
   }

@@ -13,6 +13,10 @@ import '../../../../core/widgets/custom_text_formField.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widgets/logo_widget.dart';
+import '../widgets/or_divider.dart';
+import '../widgets/sign_up_widgets/sign-up_navigation_button.dart';
+import '../widgets/sign_up_widgets/sign_up_form.dart';
+import '../widgets/social_media_buttons.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -36,97 +40,14 @@ class SignUp extends StatelessWidget {
                     AppStrings.signUp.tr(),
                     style: TextStylesManager.extraBold18,
                   ),
-                  SizedBox(height: 24.h),
-                  CustomTextFormField(
-                    controller: TextEditingController(),
-                    title: '',
-                    hintText: AppStrings.fullName.tr(),
-                  ),
                   SizedBox(height: 16.h),
-                  CustomTextFormField(
-                    controller: TextEditingController(),
-                    title: '',
-                    hintText: AppStrings.emailAddress.tr(),
-                  ),
+                  const SignUpForm(),
                   SizedBox(height: 16.h),
-                  CustomTextFormField(
-                    controller: TextEditingController(),
-                    title: '',
-                    enablePasswordToggle: true,
-                    hintText: AppStrings.password.tr(),
-                  ),
-                  SizedBox(height: 24.h),
-                  CustomButton(
-                    onTap: () {},
-                    text: AppStrings.signIn.tr(),
-                  ),
-                  SizedBox(height: 24.h),
-                  Center(
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, Routes.signInScreen);
-                      },
-                      child: Text.rich(
-                        TextSpan(
-                          children: [
-                            TextSpan(
-                              text: '${AppStrings.dontHaveAccount.tr()} ',
-                              style: TextStylesManager.regular14,
-                            ),
-                            TextSpan(
-                              text: AppStrings.signIn.tr(),
-                              style: TextStylesManager.regular14.copyWith(
-                                color: ColorsManager.primary,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 24.h),
-                  Row(
-                    children: [
-                      const Expanded(
-                        child: Divider(
-                          color: ColorsManager.lightGrey,
-                          thickness: 1,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8.w),
-                        child: Text(
-                          AppStrings.or.tr(),
-                          style: TextStylesManager.regular14,
-                        ),
-                      ),
-                      const Expanded(
-                        child: Divider(
-                          color: ColorsManager.lightGrey,
-                          thickness: 1,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 24.h),
-                  CustomSignInButton(
-                    text: AppStrings.signInGoogle.tr(),
-                    imagePath: SvgsManager.googleSvg,
-                    onPressed: () {},
-                  ),
+                  const SignUpNavigationButton(),
                   SizedBox(height: 16.h),
-                  CustomSignInButton(
-                    text: AppStrings.signInFacebook.tr(),
-                    imagePath: SvgsManager.facebookSvg,
-                    onPressed: () {},
-                  ),
+                  const OrDivider(),
                   SizedBox(height: 16.h),
-                  CustomSignInButton(
-                    text: AppStrings.signInApple.tr(),
-                    imagePath: SvgsManager.appleSvg,
-                    onPressed: () {},
-                  ),
-                  SizedBox(height: 16.h),
+                  const SocialMediaButtons(),
                 ],
               )
             ],

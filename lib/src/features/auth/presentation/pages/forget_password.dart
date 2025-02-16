@@ -11,6 +11,7 @@ import '../../../../core/widgets/custom_signIn_buttons.dart';
 import '../../../../core/widgets/custom_text_formField.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../widgets/forget_password/forget_password_form.dart';
 import '../widgets/logo_widget.dart';
 
 class ForgetPassword extends StatelessWidget {
@@ -28,6 +29,7 @@ class ForgetPassword extends StatelessWidget {
           child: Column(
             children: [
               const LogoWidget(),
+              SizedBox(height: 16.h),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -35,20 +37,8 @@ class ForgetPassword extends StatelessWidget {
                     AppStrings.forgotPassword.tr(),
                     style: TextStylesManager.extraBold18,
                   ),
-                  SizedBox(height: 24.h),
-                  CustomTextFormField(
-                    controller: TextEditingController(),
-                    title: '',
-                    hintText: AppStrings.emailAddress.tr(),
-                  ),
-
-
-                  SizedBox(height: 24.h),
-
-                  CustomButton(
-                    onTap: () {},
-                    text: AppStrings.resetPassword.tr(),
-                  ),
+                  SizedBox(height: 16.h),
+                  const ForgetPasswordForm(),
                 ],
               )
             ],

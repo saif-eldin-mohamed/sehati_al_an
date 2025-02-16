@@ -20,7 +20,22 @@
   "sign_in_facebook": "تسجيل الدخول باستخدام Facebook",
   "sign_in_apple": "تسجيل الدخول باستخدام Apple",
   "reset_password": "تغيير كلمة المرور",
-
-  "full_name": "الاسم بالكامل"
-
+  "full_name": "الاسم بالكامل",
+  "book_a_consultation_again": "احجز استشارة مرة أخرى",
+  "home": "الرئيسية",
+  "appointments": "المواعيد",
+  "search": "بحث",
+  "notifications": "الإشعارات",
+  "profile": "الملف الشخصي",
+  "welcome": "مرحبًا،",
+  "bOOK_nOW": "احجز الآن،",
+  "choose_your-current_location": "اختر موقعك الحالي",
+  "book_your_online_consultation_easily": "احجز استشارتك عبر الإنترنت بسهولة",
+  "view_all": "عرض الكل",
+  "most_popular_specialties": "أشهر التخصصات",
+  "dentistry": "طب الأسنان",
+"psychiatry": "الطب النفسي",
+  "neurology": "طب الأعصاب",
+"internal_diseases": "الأمراض الباطنية",
+"upcoming_appointments": "المواعيد القادمة"
 }

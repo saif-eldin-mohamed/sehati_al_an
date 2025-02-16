@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorsManager.primary,
+      backgroundColor: ColorsManager.secondary,
       body: LayoutBuilder(
         builder: (context, constraints) {
           if (constraints.maxWidth > 1200) {

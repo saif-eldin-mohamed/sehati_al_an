@@ -105,6 +105,8 @@ flutter:
     - assets/lottie/
     - assets/translations/ar-SA.json
     - assets/translations/en-US.json
+    - assets/images/doctor.png
+    - assets/svg/comments.svg
 
 
   fonts:

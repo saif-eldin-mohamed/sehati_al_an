@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sehati_al_an_app/src/core/app_prefrences/app_prefrences.dart';
+import 'package:sehati_al_an_app/src/core/resourses/theming/colors.dart';
 
 import 'package:sehati_al_an_app/src/core/routes/app_router.dart';
 import 'package:sehati_al_an_app/src/core/services/dependency_injection.dart';
@@ -36,7 +37,8 @@ class _MyAppState extends State<MyApp> {
         return GestureDetector(
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: MaterialApp(
-            theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+            theme: ThemeData(scaffoldBackgroundColor: ColorsManager.white),
+
             debugShowCheckedModeBanner: false,
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
