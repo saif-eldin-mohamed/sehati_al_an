@@ -37,5 +37,7 @@
 "psychiatry": "الطب النفسي",
   "neurology": "طب الأعصاب",
 "internal_diseases": "الأمراض الباطنية",
-"upcoming_appointments": "المواعيد القادمة"
+"upcoming_appointments": "المواعيد القادمة",
+  "appointments_empty": "قائمة مواعيدك فارغة",
+  "book_first_appointment": "احجز موعدك الأول، وابحث عن\nطبيب أو تخصص"
 }

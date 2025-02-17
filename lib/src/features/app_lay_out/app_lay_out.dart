@@ -4,9 +4,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/colors.dart';
 import '../../core/resourses/lanuages_strings.dart';
 import '../../core/resourses/theming/images.dart';
+import '../appointments/presentation/pages/appointments_screen.dart';
 import '../appointments/presentation/pages/empty_appointments_screen.dart';
 import '../home/presentation/screens/home_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:animations/animations.dart';
 
 class AppLayOut extends StatefulWidget {
   const AppLayOut({super.key});
@@ -20,7 +22,7 @@ class _AppLayOutState extends State<AppLayOut> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    const EmptyAppointmentsScreen()
+    const AppointmentsScreen()
   ];
 
   Future<void> _handleProfileNavigation() async {
@@ -32,7 +34,18 @@ class _AppLayOutState extends State<AppLayOut> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_currentIndex],
+      body: PageTransitionSwitcher(
+        duration: const Duration(milliseconds: 400),
+        transitionBuilder: (child, primaryAnimation, secondaryAnimation) {
+          return SharedAxisTransition(
+            animation: primaryAnimation,
+            secondaryAnimation: secondaryAnimation,
+            transitionType: SharedAxisTransitionType.horizontal,
+            child: child,
+          );
+        },
+        child: _screens[_currentIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         elevation: 8.0,

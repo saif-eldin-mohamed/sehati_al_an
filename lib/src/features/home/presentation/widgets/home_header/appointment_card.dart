@@ -4,13 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/colors.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/images.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/styles.dart';
-
+import 'package:intl/intl.dart';
 import '../../../../../core/widgets/status_button.dart';
+import '../../../../appointments/data/models/appointment_model.dart';
+import '../../../../appointments/domain/entities/appointment_entity.dart';
+import '../../../../appointments/presentation/widgets/appointment_button.dart';
 
-class AppointmentList extends StatelessWidget {
+class HomeAppointmentList extends StatelessWidget {
   final List<Map<String, String>> appointments = List.generate(
     5,
-        (index) => {
+    (index) => {
       "date": "Mon 10 Apr",
       "time": "2:00pm to 2:45pm",
       "status": "Approved",
@@ -20,7 +23,7 @@ class AppointmentList extends StatelessWidget {
     },
   );
 
-  AppointmentList({super.key});
+  HomeAppointmentList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,9 @@ class AppointmentList extends StatelessWidget {
         child: Row(
           children: List.generate(
             appointments.length,
-                (index) => AppointmentCard(appointment: appointments[index]),
+            (index) => HomeAppointmentCard(
+              appointment: StaticData.appointments[index],
+            ),
           ),
         ),
       ),
@@ -39,88 +44,122 @@ class AppointmentList extends StatelessWidget {
   }
 }
 
-class AppointmentCard extends StatelessWidget {
-  final Map<String, String> appointment;
+class HomeAppointmentCard extends StatefulWidget {
+  final Appointment appointment;
 
-  const AppointmentCard({super.key, required this.appointment});
+  const HomeAppointmentCard({
+    super.key,
+    required this.appointment,
+  });
+
+  @override
+  State<HomeAppointmentCard> createState() => _HomeAppointmentCardState();
+}
+
+class _HomeAppointmentCardState extends State<HomeAppointmentCard> {
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 350.w,
-      margin: EdgeInsets.symmetric(horizontal: 8.w),
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+    final buttons = AppointmentActions.getButtons(
+      widget.appointment,
+      context,
+    );
+
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+      margin: EdgeInsets.symmetric(vertical: 6.h),
+      padding: EdgeInsets.all(12.r),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(color: ColorsManager.lightGrey),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(
+          color: isHovered ? ColorsManager.primary : ColorsManager.lightGrey,
+        ),
+        boxShadow: isHovered
+            ? [
+                BoxShadow(
+                  color: ColorsManager.primary.withOpacity(0.2),
+                  blurRadius: 8,
+                  spreadRadius: 2,
+                )
+              ]
+            : [],
         color: Colors.white,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text(
-            "Appointment date",
-            style: TextStylesManager.semiBold12,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(height: 4.h),
+          Text(widget.appointment.type.displayName,
+              style: TextStylesManager.regular12),
+          SizedBox(height: 6.h),
           Row(
             children: [
               const Icon(Icons.access_time, size: 18, color: Colors.black54),
-              SizedBox(width: 4.w),
+              SizedBox(width: 6.w),
               Expanded(
                 child: RichText(
                   overflow: TextOverflow.ellipsis,
                   text: TextSpan(
                     style: DefaultTextStyle.of(context).style,
                     children: [
-                      TextSpan(text: appointment["date"]),
-                       TextSpan(
-                        text: "  ●  ",
-                        style: TextStyle(fontSize: 16.r),
+                      TextSpan(
+                        text: DateFormat('EEE dd MMM')
+                            .format(widget.appointment.dateTime),
                       ),
-                      TextSpan(text: appointment["time"]),
+                      TextSpan(
+                        text: "  ●  ",
+                        style: TextStyle(
+                          fontSize: 16.r,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(
+                        text:
+                            "${DateFormat('h:mma').format(widget.appointment.dateTime)} - ${DateFormat('h:mma').format(widget.appointment.dateTime.add(widget.appointment.duration))}",
+                      ),
                     ],
                   ),
                 ),
               ),
-              StatusButton(status: appointment["status"]!)
+              StatusButton(
+                status: widget.appointment.status.displayName,
+                // color: widget.appointment.status.color,
+              ),
             ],
           ),
-          Divider(
-            height: 18.h,
-            color: ColorsManager.lightGrey,
-          ),
+          Divider(height: 18.h, color: ColorsManager.lightGrey),
           Row(
             children: [
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      appointment["doctor"]!,
+                      widget.appointment.doctorName,
                       style: TextStylesManager.bold16,
-                      overflow: TextOverflow.ellipsis,
                     ),
                     Text(
-                      appointment["specialty"]!,
+                      widget.appointment.specialty,
                       style: TextStylesManager.regular12,
-                      overflow: TextOverflow.ellipsis,
                     ),
                   ],
                 ),
               ),
-              SizedBox(width: 8.w),
-              ClipOval(
-                child: Image.asset(
-                  appointment["image"]!,
-                  fit: BoxFit.contain,
-                  width: 48.w,
-                  height: 48.h,
+              SizedBox(width: 10.w),
+              Hero(
+                tag: widget.appointment.id,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(24.r),
+                  child: Image.asset(
+                    widget.appointment.doctorImage,
+                    width: 48.w,
+                    height: 48.h,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ],

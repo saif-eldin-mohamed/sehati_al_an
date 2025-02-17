@@ -2,18 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:sehati_al_an_app/src/core/resourses/language_manager.dart';
-import '../../../../../core/app_prefrences/app_prefrences.dart';
-import '../../../../../core/helpers/enums.dart';
 import '../../../../../core/resourses/lanuages_strings.dart';
 import '../../../../../core/resourses/theming/colors.dart';
-import '../../../../../core/resourses/theming/images.dart';
-import '../../../../../core/resourses/theming/styles.dart';
-import '../../../../../core/services/dependency_injection.dart';
-import 'book_now_button.dart';
-import 'doctor_image.dart';
-
-import '../../../../../core/resourses/lanuages_strings.dart';
 import '../../../../../core/resourses/theming/styles.dart';
 
 class WelcomeSection extends StatelessWidget {

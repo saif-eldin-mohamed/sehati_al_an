@@ -45,8 +45,8 @@ class _MyAppState extends State<MyApp> {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             themeMode: ThemeMode.light,
-            // onGenerateRoute: AppRouter.generateRoute,
-            home: AppLayOut(),
+            onGenerateRoute: AppRouter.generateRoute,
+            // home: AppLayOut(),
           ),
         );
       },

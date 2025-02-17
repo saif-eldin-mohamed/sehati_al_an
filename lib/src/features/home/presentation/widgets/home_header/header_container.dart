@@ -18,17 +18,18 @@ class HomeHeaderContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isArabic = sl<AppPreferences>().getAppLanguage() == LanguageType.arabic.getValue;
+    final isArabic =
+        sl<AppPreferences>().getAppLanguage() == LanguageType.arabic.getValue;
 
     return Container(
       height: 318.h,
       width: double.infinity,
       decoration: _buildContainerDecoration(),
-      clipBehavior: Clip.hardEdge, // منع أي محتوى من الخروج عن حدود الكونتينر
+      clipBehavior: Clip.hardEdge,
       child: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal:  24.w),
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -62,16 +63,16 @@ class HomeHeaderContainer extends StatelessWidget {
           ColorsManager.primary.withOpacity(0.8),
           ColorsManager.background,
         ],
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
+        end: Alignment.topCenter,
+        begin: Alignment.bottomCenter,
       ),
-      boxShadow: [
-        BoxShadow(
-          color: ColorsManager.primary.withOpacity(0.3),
-          blurRadius: 15,
-          offset: const Offset(0, 5),
-        ),
-      ],
+      // boxShadow: [
+      //   BoxShadow(
+      //     color: ColorsManager.primary.withOpacity(0.3),
+      //     blurRadius: 15,
+      //     offset: const Offset(0, 5),
+      //   ),
+      // ],
     );
   }
 }

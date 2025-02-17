@@ -40,4 +40,6 @@ class AppStrings {
       "choose_your-current_location";
   static const String book_your_online_consultation_easily =
       "book_your_online_consultation_easily";
+  static const String appointments_empty = "appointments_empty";
+  static const String book_first_appointment = "book_first_appointment";
 }

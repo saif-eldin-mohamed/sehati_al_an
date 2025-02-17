@@ -37,5 +37,7 @@
   "psychiatry": "Psychiatry",
   "neurology": "Neurology",
   "internal_diseases": "Internal diseases",
-  "upcoming_appointments": "upcoming appointments"
+  "upcoming_appointments": "upcoming appointments",
+  "appointments_empty": "Your Appointments Empty",
+  "book_first_appointment": "Book your first appointment, and search for\na doctor or specialty"
 }

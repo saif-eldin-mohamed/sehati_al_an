@@ -38,7 +38,7 @@ class DoctorAppointmentCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(color: ColorsManager.lightGrey),
       ),
-      padding: EdgeInsets.only(left: 8.w,right: 8.w,top: 8.h),
+      padding: EdgeInsets.only(left: 8.w, right: 8.w, top: 8.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -115,8 +115,8 @@ class DoctorAppointmentCard extends StatelessWidget {
                 .copyWith(color: ColorsManager.primary),
           ),
           SizedBox(height: 4.h),
-          _buildTimeRow(availableSlots),          SizedBox(height: 12.h),
-
+          _buildTimeRow(availableSlots),
+          SizedBox(height: 12.h),
         ],
       ),
     );
@@ -188,7 +188,6 @@ class DoctorAppointmentCard extends StatelessWidget {
     return Container(
       width: 58.w,
       height: 30.h,
-
       decoration: ShapeDecoration(
         color: ColorsManager.background,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),

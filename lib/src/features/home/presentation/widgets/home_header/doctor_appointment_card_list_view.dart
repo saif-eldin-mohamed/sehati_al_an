@@ -13,7 +13,7 @@ class DoctorAppointmentCardListView extends StatelessWidget {
       child: Row(
         children: List.generate(
           5,
-              (index) => Padding(
+          (index) => Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0.w),
             child: const DoctorAppointmentCard(
               doctorName: 'Dr. Sarah Patel',
