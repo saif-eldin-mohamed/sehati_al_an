@@ -7,6 +7,7 @@ class ImagesManager {
   static const String onBoarding_2 = '$imagesBaseUrl/onBoarding_2.jpg';
   static const String onBoarding_3 = '$imagesBaseUrl/on_boarding_3.jpg';
   static const String doctorImg = '$imagesBaseUrl/doctor.png';
+  static const String appoimentEmptyImg = '$imagesBaseUrl/appoiment_empty.png';
 
   static const String logoImg = '$imagesBaseUrl/logo_app.png';
   static const String backGroundSplashImg =

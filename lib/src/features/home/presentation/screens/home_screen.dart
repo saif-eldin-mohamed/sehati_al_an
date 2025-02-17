@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resourses/lanuages_strings.dart';
+import '../../../../core/resourses/theming/colors.dart';
 import '../../../../core/widgets/section_header.dart';
 import '../widgets/home_header/appointment_card.dart';
 import '../widgets/home_header/custom_category_card.dart';
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: ColorsManager.white,
       body: SingleChildScrollView(
         child: Column(
           children: [

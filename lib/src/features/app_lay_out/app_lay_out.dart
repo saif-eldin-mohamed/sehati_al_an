@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/colors.dart';
 import '../../core/resourses/lanuages_strings.dart';
 import '../../core/resourses/theming/images.dart';
+import '../appointments/presentation/pages/empty_appointments_screen.dart';
 import '../home/presentation/screens/home_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -19,6 +20,7 @@ class _AppLayOutState extends State<AppLayOut> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
+    const EmptyAppointmentsScreen()
   ];
 
   Future<void> _handleProfileNavigation() async {

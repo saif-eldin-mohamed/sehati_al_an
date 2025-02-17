@@ -38,7 +38,7 @@ class DoctorAppointmentCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(color: ColorsManager.lightGrey),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+      padding: EdgeInsets.only(left: 8.w,right: 8.w,top: 8.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -53,13 +53,11 @@ class DoctorAppointmentCard extends StatelessWidget {
                       style: TextStylesManager.bold16
                           .copyWith(color: ColorsManager.primary),
                     ),
-                    SizedBox(height: 4.h),
                     Text(
                       specialty,
                       style: TextStylesManager.regular12
                           .copyWith(color: Colors.grey[700]),
                     ),
-                    SizedBox(height: 4.h),
                     Row(
                       children: [
                         const Icon(Icons.star, color: Colors.amber, size: 20),
@@ -93,7 +91,7 @@ class DoctorAppointmentCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 12.h),
+          SizedBox(height: 8.h),
           Row(
             children: [
               _buildPriceItem(SvgsManager.doctorIconSvg,
@@ -110,14 +108,15 @@ class DoctorAppointmentCard extends StatelessWidget {
                   SvgsManager.commentsSvg, '\$${chatPrice.toStringAsFixed(0)}'),
             ],
           ),
-          SizedBox(height: 12.h),
+          SizedBox(height: 8.h),
           Text(
             'Available Today',
             style: TextStylesManager.semiBold12
                 .copyWith(color: ColorsManager.primary),
           ),
           SizedBox(height: 4.h),
-          _buildTimeRow(availableSlots)
+          _buildTimeRow(availableSlots),          SizedBox(height: 12.h),
+
         ],
       ),
     );
@@ -127,8 +126,8 @@ class DoctorAppointmentCard extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 30.w,
-          height: 30.h,
+          width: 28.w,
+          height: 28.h,
           decoration: const BoxDecoration(
             color: Color(0xFFE1E6ED),
             shape: BoxShape.circle,
@@ -188,8 +187,8 @@ class DoctorAppointmentCard extends StatelessWidget {
   Widget _buildTimeItem({required String time}) {
     return Container(
       width: 58.w,
-      height: 26.h,
-      padding: const EdgeInsets.all(4),
+      height: 30.h,
+
       decoration: ShapeDecoration(
         color: ColorsManager.background,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),

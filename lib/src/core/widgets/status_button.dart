@@ -42,7 +42,6 @@ class StatusButton extends StatelessWidget {
     }
 
     return Container(
-      height: 30.h,
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       decoration: BoxDecoration(
         color: getStatusColor().withOpacity(0.9),

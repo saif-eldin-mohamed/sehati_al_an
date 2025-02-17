@@ -10,7 +10,7 @@ import '../../../../../core/widgets/status_button.dart';
 class AppointmentList extends StatelessWidget {
   final List<Map<String, String>> appointments = List.generate(
     5,
-    (index) => {
+        (index) => {
       "date": "Mon 10 Apr",
       "time": "2:00pm to 2:45pm",
       "status": "Approved",
@@ -19,6 +19,8 @@ class AppointmentList extends StatelessWidget {
       "image": ImagesManager.onBoarding_3,
     },
   );
+
+  AppointmentList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class AppointmentList extends StatelessWidget {
         child: Row(
           children: List.generate(
             appointments.length,
-            (index) => AppointmentCard(appointment: appointments[index]),
+                (index) => AppointmentCard(appointment: appointments[index]),
           ),
         ),
       ),
@@ -46,7 +48,6 @@ class AppointmentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 350.w,
-      height: 142.h,
       margin: EdgeInsets.symmetric(horizontal: 8.w),
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
       decoration: BoxDecoration(
@@ -56,27 +57,34 @@ class AppointmentCard extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          const Text("Appointment date", style: TextStylesManager.semiBold12),
+          const Text(
+            "Appointment date",
+            style: TextStylesManager.semiBold12,
+            overflow: TextOverflow.ellipsis,
+          ),
           SizedBox(height: 4.h),
           Row(
             children: [
               const Icon(Icons.access_time, size: 18, color: Colors.black54),
               SizedBox(width: 4.w),
-              RichText(
-                text: TextSpan(
-                  style: DefaultTextStyle.of(context).style,
-                  children: [
-                    TextSpan(text: appointment["date"]),
-                    const TextSpan(
-                      text: "  ●  ",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    TextSpan(text: appointment["time"]),
-                  ],
+              Expanded(
+                child: RichText(
+                  overflow: TextOverflow.ellipsis,
+                  text: TextSpan(
+                    style: DefaultTextStyle.of(context).style,
+                    children: [
+                      TextSpan(text: appointment["date"]),
+                       TextSpan(
+                        text: "  ●  ",
+                        style: TextStyle(fontSize: 16.r),
+                      ),
+                      TextSpan(text: appointment["time"]),
+                    ],
+                  ),
                 ),
               ),
-              const Spacer(),
               StatusButton(status: appointment["status"]!)
             ],
           ),
@@ -85,21 +93,26 @@ class AppointmentCard extends StatelessWidget {
             color: ColorsManager.lightGrey,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    appointment["doctor"]!,
-                    style: TextStylesManager.bold16,
-                  ),
-                  Text(
-                    appointment["specialty"]!,
-                    style: TextStylesManager.regular12,
-                  ),
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      appointment["doctor"]!,
+                      style: TextStylesManager.bold16,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(
+                      appointment["specialty"]!,
+                      style: TextStylesManager.regular12,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
               ),
+              SizedBox(width: 8.w),
               ClipOval(
                 child: Image.asset(
                   appointment["image"]!,

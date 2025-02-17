@@ -6,6 +6,7 @@ import 'package:sehati_al_an_app/src/core/resourses/theming/colors.dart';
 
 import 'package:sehati_al_an_app/src/core/routes/app_router.dart';
 import 'package:sehati_al_an_app/src/core/services/dependency_injection.dart';
+import 'package:sehati_al_an_app/src/features/app_lay_out/app_lay_out.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -44,7 +45,8 @@ class _MyAppState extends State<MyApp> {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             themeMode: ThemeMode.light,
-            onGenerateRoute: AppRouter.generateRoute,
+            // onGenerateRoute: AppRouter.generateRoute,
+            home: AppLayOut(),
           ),
         );
       },

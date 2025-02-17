@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../core/resourses/theming/images.dart';
 import 'doctor_appointment_card.dart';
 
@@ -9,13 +8,12 @@ class DoctorAppointmentCardListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 192.h,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return Padding(
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: List.generate(
+          5,
+              (index) => Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0.w),
             child: const DoctorAppointmentCard(
               doctorName: 'Dr. Sarah Patel',
@@ -38,8 +36,8 @@ class DoctorAppointmentCardListView extends StatelessWidget {
                 '11:45 am',
               ],
             ),
-          );
-        },
+          ),
+        ),
       ),
     );
   }

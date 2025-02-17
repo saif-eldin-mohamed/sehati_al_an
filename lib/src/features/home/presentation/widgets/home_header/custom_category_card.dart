@@ -22,7 +22,6 @@ class CustomCategoryCard extends StatelessWidget {
       padding: EdgeInsets.only(right: 12.0.w),
       child: Container(
         width: 78.6.w,
-        height: 86.h,
         padding: EdgeInsets.all(8.r),
         decoration: BoxDecoration(
           color: Colors.transparent,
@@ -39,6 +38,8 @@ class CustomCategoryCard extends StatelessWidget {
             ),
             SizedBox(height: 8.h),
             Text(title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: TextStylesManager.regular12),
           ],

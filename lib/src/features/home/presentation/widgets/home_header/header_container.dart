@@ -18,23 +18,23 @@ class HomeHeaderContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isArabic =
-        sl<AppPreferences>().getAppLanguage() == LanguageType.arabic.getValue;
+    final isArabic = sl<AppPreferences>().getAppLanguage() == LanguageType.arabic.getValue;
 
     return Container(
       height: 318.h,
       width: double.infinity,
       decoration: _buildContainerDecoration(),
+      clipBehavior: Clip.hardEdge, // منع أي محتوى من الخروج عن حدود الكونتينر
       child: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.all(24.w),
+            padding: EdgeInsets.symmetric(horizontal:  24.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 45.h),
+                SizedBox(height: 35.h),
                 const WelcomeSection(),
-                SizedBox(height: 20.h),
+                SizedBox(height: 10.h),
                 const BookNowButton(),
               ],
             ),
