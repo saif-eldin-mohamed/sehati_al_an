@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../domain/entities/appointment_entity.dart';
 import 'new_reservations_card.dart';
 
-class AppointmentListView extends StatelessWidget {
-  const AppointmentListView({super.key});
+class NewReservationListView extends StatelessWidget {
+  const NewReservationListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class AppointmentListView extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 8.h),
         itemCount: StaticData.appointments.length,
         itemBuilder: (context, index) {
-          return AppointmentCard(
+          return NewReservationCard(
             appointment: StaticData.appointments[index],
           );
         },

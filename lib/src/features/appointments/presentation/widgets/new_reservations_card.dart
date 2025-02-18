@@ -11,19 +11,19 @@ import '../../../../core/widgets/status_button.dart';
 import '../../data/models/appointment_model.dart';
 import 'appointment_button.dart';
 
-class AppointmentCard extends StatefulWidget {
+class NewReservationCard extends StatefulWidget {
   final Appointment appointment;
 
-  const AppointmentCard({
+  const NewReservationCard({
     super.key,
     required this.appointment,
   });
 
   @override
-  State<AppointmentCard> createState() => _AppointmentCardState();
+  State<NewReservationCard> createState() => _NewReservationCardState();
 }
 
-class _AppointmentCardState extends State<AppointmentCard> {
+class _NewReservationCardState extends State<NewReservationCard> {
   bool isHovered = false;
 
   @override
