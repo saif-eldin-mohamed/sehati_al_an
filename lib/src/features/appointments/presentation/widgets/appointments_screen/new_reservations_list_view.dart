@@ -8,16 +8,15 @@ class NewReservationListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.8,
-      child: ListView.builder(
-        padding: EdgeInsets.symmetric(vertical: 8.h),
-        itemCount: StaticData.appointments.length,
-        itemBuilder: (context, index) {
-          return NewReservationCard(
+    return Column(
+      children: List.generate(
+        StaticData.appointments.length,
+            (index) => Padding(
+          padding: EdgeInsets.symmetric(vertical: 4.h),
+          child: NewReservationCard(
             appointment: StaticData.appointments[index],
-          );
-        },
+          ),
+        ),
       ),
     );
   }

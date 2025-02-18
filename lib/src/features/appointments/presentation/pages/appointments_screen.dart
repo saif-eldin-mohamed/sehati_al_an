@@ -15,15 +15,22 @@ class AppointmentsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-            child: Text(
+        title: Text(
           'Appointments',
-          style: TextStylesManager.extraBold20,
-        )),
+          style: TextStylesManager.extraBold20.copyWith(
+            color: ColorsManager.primary,
+          ),
+        ),
+        centerTitle: true,
         elevation: 0,
-        backgroundColor: ColorsManager.white,
-        automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20),
+          ),
+        ),
       ),
+
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),

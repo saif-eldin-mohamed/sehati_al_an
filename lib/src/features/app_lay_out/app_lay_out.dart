@@ -10,6 +10,8 @@ import '../home/presentation/screens/home_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:animations/animations.dart';
 
+import '../search/presentation/pages/search_screen.dart';
+
 class AppLayOut extends StatefulWidget {
   const AppLayOut({super.key});
 
@@ -22,7 +24,8 @@ class _AppLayOutState extends State<AppLayOut> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    const AppointmentsScreen()
+    const AppointmentsScreen(),
+    const SearchScreen()
   ];
 
   Future<void> _handleProfileNavigation() async {
