@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/helpers/enums.dart';
-import '../../../../core/resourses/theming/colors.dart';
-import '../../data/models/appointment_model.dart';
+
+import '../../../../../core/helpers/enums.dart';
+import '../../../../../core/resourses/theming/colors.dart';
+import '../../../data/models/appointment_model.dart';
 
 // Appointment Button Model
 class AppointmentButton {

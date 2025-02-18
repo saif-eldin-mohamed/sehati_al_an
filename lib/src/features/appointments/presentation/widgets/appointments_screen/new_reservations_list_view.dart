@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../domain/entities/appointment_entity.dart';
+import '../../../domain/entities/appointment_entity.dart';
 import 'new_reservations_card.dart';
 
 class NewReservationListView extends StatelessWidget {
