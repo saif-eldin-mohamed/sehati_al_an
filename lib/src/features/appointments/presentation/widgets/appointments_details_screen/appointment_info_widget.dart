@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sehati_al_an_app/src/core/widgets/custom_button.dart';
 import '../../../../../core/resourses/theming/colors.dart';
 import '../../../../../core/resourses/theming/images.dart';
 import '../../../../../core/widgets/appointment_info.dart';
+import '../../../../../core/widgets/review_dialog.dart';
 
 class AppointmentInfoWidget extends StatelessWidget {
   const AppointmentInfoWidget({super.key});
@@ -67,10 +69,31 @@ class AppointmentInfoWidget extends StatelessWidget {
         SizedBox(
           height: 24.h,
         ),
-        CustomButton(    text: 'Write your review',
+        CustomButton(
+          text: 'Write your review',
           backgroundColor: ColorsManager.primary.withOpacity(0.2),
           textColor: ColorsManager.primary,
-          onTap: () {},),
+          onTap: () {
+            showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              builder: (context) => Padding(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                ),
+                child: ReviewBottomSheet(
+                  onSubmit: (title, description, rating) {
+                    // Handle the review submission here
+                    print('Rating: $rating');
+                    print('Title: $title');
+                    print('Description: $description');
+                  },
+                ),
+              ),
+            );
+          },
+        ),
         SizedBox(
           height: 24.h,
         ),

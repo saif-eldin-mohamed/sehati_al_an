@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/colors.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/styles.dart';
 
-// Custom Button
 class CustomButton extends StatelessWidget {
   final VoidCallback? onTap;
   final String? text;
@@ -39,17 +38,22 @@ class CustomButton extends StatelessWidget {
       height: height,
       decoration: outlined
           ? BoxDecoration(
-              borderRadius: BorderRadius.circular(borderRadius),
-              border: Border.all(
-                color: borderColor ?? ColorsManager.textSecondary,
-                width: 1,
-              ),
-            )
+        borderRadius: BorderRadius.circular(borderRadius),
+        border: Border.all(
+          color: borderColor ?? ColorsManager.textSecondary,
+          width: 1,
+        ),
+      )
           : null,
       child: MaterialButton(
         onPressed: onTap,
         elevation: 0,
         highlightElevation: 0,
+        hoverElevation: 0,
+        focusElevation: 0,
+        highlightColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        splashColor: Colors.transparent,
         padding: padding,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
@@ -57,13 +61,13 @@ class CustomButton extends StatelessWidget {
         color: outlined ? Colors.transparent : backgroundColor,
         child: text != null
             ? Text(
-                text!,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: outlined ? backgroundColor : textColor,
-                ),
-              )
+          text!,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: outlined ? backgroundColor : textColor,
+          ),
+        )
             : child,
       ),
     );
