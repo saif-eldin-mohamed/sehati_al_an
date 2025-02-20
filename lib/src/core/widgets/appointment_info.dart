@@ -47,10 +47,11 @@ class AppointmentInfo extends StatelessWidget {
       text: TextSpan(
         style: TextStylesManager.bold16.copyWith(color: textColor),
         children: [
+          TextSpan(text: text),
           if (imagePath != null)
             WidgetSpan(
               child: Padding(
-                padding: EdgeInsets.only(right: 6.w),
+                padding: EdgeInsets.only(left: 4.w),
                 child: Image.asset(
                   imagePath,
                   width: 20.w,
@@ -58,9 +59,11 @@ class AppointmentInfo extends StatelessWidget {
                 ),
               ),
             ),
-          TextSpan(text: text),
         ],
       ),
     );
   }
+
+
+
 }

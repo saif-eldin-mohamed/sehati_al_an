@@ -114,7 +114,7 @@ class _ReviewBottomSheetState extends State<ReviewBottomSheet>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
                         5,
-                            (index) => TweenAnimationBuilder<double>(
+                        (index) => TweenAnimationBuilder<double>(
                           duration: Duration(milliseconds: 200 + (index * 100)),
                           tween: Tween(begin: 0.0, end: 1.0),
                           builder: (context, value, child) {
@@ -127,7 +127,8 @@ class _ReviewBottomSheetState extends State<ReviewBottomSheet>
                                   });
                                 },
                                 child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 4.w),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 4.w),
                                   child: Icon(
                                     index < _rating
                                         ? Icons.star_rounded
@@ -206,18 +207,23 @@ class _ReviewBottomSheetState extends State<ReviewBottomSheet>
                       ),
                     ),
                     SizedBox(height: 24.h),
-                    CustomButton(onTap: (){       if (_rating > 0 &&
-                        _titleController.text.isNotEmpty &&
-                        _descriptionController.text.isNotEmpty) {
-                      _animationController.reverse().then((_) {
-                        widget.onSubmit(
-                          _titleController.text,
-                          _descriptionController.text,
-                          _rating,
-                        );
-                        Navigator.pop(context);
-                      });
-                    }},text:  'Submit Review',)
+                    CustomButton(
+                      onTap: () {
+                        if (_rating > 0 &&
+                            _titleController.text.isNotEmpty &&
+                            _descriptionController.text.isNotEmpty) {
+                          _animationController.reverse().then((_) {
+                            widget.onSubmit(
+                              _titleController.text,
+                              _descriptionController.text,
+                              _rating,
+                            );
+                            Navigator.pop(context);
+                          });
+                        }
+                      },
+                      text: 'Submit Review',
+                    )
                   ],
                 ),
               ),

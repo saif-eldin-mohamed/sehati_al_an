@@ -11,7 +11,7 @@ class NewReservationListView extends StatelessWidget {
     return Column(
       children: List.generate(
         StaticData.appointments.length,
-            (index) => Padding(
+        (index) => Padding(
           padding: EdgeInsets.symmetric(vertical: 4.h),
           child: NewReservationCard(
             appointment: StaticData.appointments[index],

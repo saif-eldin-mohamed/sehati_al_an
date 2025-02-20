@@ -33,9 +33,10 @@ class _NewReservationCardState extends State<NewReservationCard> {
     );
 
     return InkWell(
-      onTap: (){
+      onTap: () {
         Navigator.pushNamed(context, Routes.appointmentsDetailsScreen);
-      },child: AnimatedContainer(
+      },
+      child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut,
         margin: EdgeInsets.symmetric(vertical: 6.h),

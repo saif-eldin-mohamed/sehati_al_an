@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/resourses/theming/images.dart';
-import 'doctor_appointment_card.dart';
+import 'doctor_appointment_consultation_card.dart';
 
-class DoctorAppointmentCardListView extends StatelessWidget {
-  const DoctorAppointmentCardListView({super.key});
+class DoctorAppointmentConsultationCardListView extends StatelessWidget {
+  const DoctorAppointmentConsultationCardListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class DoctorAppointmentCardListView extends StatelessWidget {
           5,
           (index) => Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0.w),
-            child: const DoctorAppointmentCard(
+            child: const DoctorAppointmentConsultationCard(
               doctorName: 'Dr. Sarah Patel',
               specialty: 'Internal Medicine',
               rating: 4.95,

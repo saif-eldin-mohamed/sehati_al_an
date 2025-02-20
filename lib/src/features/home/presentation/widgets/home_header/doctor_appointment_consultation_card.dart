@@ -5,7 +5,7 @@ import 'package:sehati_al_an_app/src/core/resourses/theming/images.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class DoctorAppointmentCard extends StatelessWidget {
+class DoctorAppointmentConsultationCard extends StatelessWidget {
   final String doctorName;
   final String specialty;
   final double rating;
@@ -16,8 +16,8 @@ class DoctorAppointmentCard extends StatelessWidget {
   final double chatPrice;
   final List<String> availableSlots;
 
-  const DoctorAppointmentCard({
-    Key? key,
+  const DoctorAppointmentConsultationCard({
+    super.key,
     required this.doctorName,
     required this.specialty,
     required this.rating,
@@ -27,7 +27,7 @@ class DoctorAppointmentCard extends StatelessWidget {
     required this.videoPrice,
     required this.chatPrice,
     required this.availableSlots,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

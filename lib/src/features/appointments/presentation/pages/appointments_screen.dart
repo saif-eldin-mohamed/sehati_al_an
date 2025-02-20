@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/colors.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../widgets/appointments_screen/new_reservations_list_view.dart';
 import '../widgets/appointments_screen/old_reservation_list_view.dart';
-import '../widgets/appointments_screen/old_reservations_card.dart';
 
 class AppointmentsScreen extends StatelessWidget {
   const AppointmentsScreen({super.key});
@@ -30,12 +28,11 @@ class AppointmentsScreen extends StatelessWidget {
           ),
         ),
       ),
-
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start, // Right align content
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 'New reservations',

@@ -10,57 +10,27 @@ import '../../../../../core/widgets/status_button.dart';
 import '../../../../appointments/data/models/appointment_model.dart';
 import '../../../../appointments/domain/entities/appointment_entity.dart';
 
-class HomeAppointmentList extends StatelessWidget {
-  const HomeAppointmentList({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.w),
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: List.generate(
-                StaticData.appointments.length,
-                (index) => Padding(
-                  padding: EdgeInsets.only(right: 8.w),
-                  child: SizedBox(
-                    width: 300.w,
-                    child: HomeAppointmentCard(
-                      appointment: StaticData.appointments[index],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
-}
 
-class HomeAppointmentCard extends StatefulWidget {
+class HomeUpcomingAppointmentCard extends StatefulWidget {
   final Appointment appointment;
 
-  const HomeAppointmentCard({super.key, required this.appointment});
+  const HomeUpcomingAppointmentCard({super.key, required this.appointment});
 
   @override
-  State<HomeAppointmentCard> createState() => _HomeAppointmentCardState();
+  State<HomeUpcomingAppointmentCard> createState() => _HomeUpcomingAppointmentCardState();
 }
 
-class _HomeAppointmentCardState extends State<HomeAppointmentCard> {
+class _HomeUpcomingAppointmentCardState extends State<HomeUpcomingAppointmentCard> {
   bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         Navigator.pushNamed(context, Routes.appointmentsDetailsScreen);
-      },child: MouseRegion(
+      },
+      child: MouseRegion(
         onEnter: (_) => setState(() => isHovered = true),
         onExit: (_) => setState(() => isHovered = false),
         child: AnimatedContainer(
@@ -71,7 +41,8 @@ class _HomeAppointmentCardState extends State<HomeAppointmentCard> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: isHovered ? ColorsManager.primary : ColorsManager.lightGrey,
+              color:
+                  isHovered ? ColorsManager.primary : ColorsManager.lightGrey,
             ),
             boxShadow: isHovered
                 ? [
@@ -97,7 +68,8 @@ class _HomeAppointmentCardState extends State<HomeAppointmentCard> {
               SizedBox(height: 6.h),
               Row(
                 children: [
-                  const Icon(Icons.access_time, size: 18, color: Colors.black54),
+                  const Icon(Icons.access_time,
+                      size: 18, color: Colors.black54),
                   SizedBox(width: 6.w),
                   Expanded(
                     child: RichText(
@@ -155,9 +127,10 @@ class _HomeAppointmentCardState extends State<HomeAppointmentCard> {
                   Hero(
                     tag: widget.appointment.id,
                     child: CircleAvatar(
-                      radius: 48.r,
+                      radius: 28.r,
                       backgroundColor: ColorsManager.lightGrey,
-                      backgroundImage: AssetImage(widget.appointment.doctorImage),
+                      backgroundImage:
+                          AssetImage(widget.appointment.doctorImage),
                     ),
                   ),
                 ],

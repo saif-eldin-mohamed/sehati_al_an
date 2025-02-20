@@ -38,12 +38,12 @@ class CustomButton extends StatelessWidget {
       height: height,
       decoration: outlined
           ? BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius),
-        border: Border.all(
-          color: borderColor ?? ColorsManager.textSecondary,
-          width: 1,
-        ),
-      )
+              borderRadius: BorderRadius.circular(borderRadius),
+              border: Border.all(
+                color: borderColor ?? ColorsManager.textSecondary,
+                width: 1,
+              ),
+            )
           : null,
       child: MaterialButton(
         onPressed: onTap,
@@ -61,13 +61,13 @@ class CustomButton extends StatelessWidget {
         color: outlined ? Colors.transparent : backgroundColor,
         child: text != null
             ? Text(
-          text!,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: outlined ? backgroundColor : textColor,
-          ),
-        )
+                text!,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: outlined ? backgroundColor : textColor,
+                ),
+              )
             : child,
       ),
     );

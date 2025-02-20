@@ -41,12 +41,12 @@ class _DoctorCardState extends State<DoctorCard> {
           ),
           boxShadow: isHovered
               ? [
-            BoxShadow(
-              color: ColorsManager.primary.withOpacity(0.2),
-              blurRadius: 8,
-              spreadRadius: 2,
-            )
-          ]
+                  BoxShadow(
+                    color: ColorsManager.primary.withOpacity(0.2),
+                    blurRadius: 8,
+                    spreadRadius: 2,
+                  )
+                ]
               : [],
           color: Colors.white,
         ),
@@ -73,11 +73,12 @@ class _DoctorCardState extends State<DoctorCard> {
             ),
             SizedBox(width: 10.w),
             Hero(
-              tag: 'doctor_${widget.appointment.id}', // Use the unique doctor ID for the tag
+              tag:
+                  'doctor_${widget.appointment.id}', // Use the unique doctor ID for the tag
               child: CircleAvatar(
-                radius: 48.r,
+                radius: 28.r,
                 backgroundColor: ColorsManager.lightGrey,
-                backgroundImage: AssetImage(ImagesManager.doctorImg),
+                backgroundImage: const AssetImage(ImagesManager.doctorImg),
               ),
             ),
           ],

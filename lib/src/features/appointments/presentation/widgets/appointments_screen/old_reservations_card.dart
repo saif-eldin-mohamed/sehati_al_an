@@ -9,7 +9,6 @@ import '../../../../../core/widgets/status_button.dart';
 import '../../../data/models/appointment_model.dart';
 import '../../../domain/entities/appointment_entity.dart';
 
-
 class OldReservationCard extends StatefulWidget {
   final Appointment appointment;
 
@@ -25,7 +24,7 @@ class _OldReservationCardState extends State<OldReservationCard> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         Navigator.pushNamed(context, Routes.appointmentsDetailsScreen);
       },
       child: MouseRegion(
@@ -39,7 +38,8 @@ class _OldReservationCardState extends State<OldReservationCard> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: isHovered ? ColorsManager.primary : ColorsManager.lightGrey,
+              color:
+                  isHovered ? ColorsManager.primary : ColorsManager.lightGrey,
             ),
             boxShadow: isHovered
                 ? [
@@ -65,7 +65,8 @@ class _OldReservationCardState extends State<OldReservationCard> {
               SizedBox(height: 6.h),
               Row(
                 children: [
-                  const Icon(Icons.access_time, size: 18, color: Colors.black54),
+                  const Icon(Icons.access_time,
+                      size: 18, color: Colors.black54),
                   SizedBox(width: 6.w),
                   Expanded(
                     child: RichText(
@@ -123,9 +124,10 @@ class _OldReservationCardState extends State<OldReservationCard> {
                   Hero(
                     tag: widget.appointment.id,
                     child: CircleAvatar(
-                      radius: 48.r,
+                      radius: 28.r,
                       backgroundColor: ColorsManager.lightGrey,
-                      backgroundImage: AssetImage(widget.appointment.doctorImage),
+                      backgroundImage:
+                          AssetImage(widget.appointment.doctorImage),
                     ),
                   ),
                 ],

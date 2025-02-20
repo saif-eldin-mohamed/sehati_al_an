@@ -1,7 +1,9 @@
+import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sehati_al_an_app/src/core/widgets/custom_button.dart';
+import 'package:sehati_al_an_app/src/features/appointments/presentation/widgets/appointments_details_screen/review.dart';
 import '../../../../../core/resourses/theming/colors.dart';
 import '../../../../../core/resourses/theming/images.dart';
 import '../../../../../core/widgets/appointment_info.dart';
@@ -31,7 +33,6 @@ class AppointmentInfoWidget extends StatelessWidget {
         SizedBox(
           height: 24.h,
         ),
-
         const AppointmentInfo(
           title: 'Payment method',
           leftText: 'Pay by',
@@ -39,7 +40,6 @@ class AppointmentInfoWidget extends StatelessWidget {
           rightText: '**** 7766',
           rightImage: ImagesManager.vISAImg,
         ),
-
         SizedBox(
           height: 24.h,
         ),
@@ -47,7 +47,10 @@ class AppointmentInfoWidget extends StatelessWidget {
           title: 'Location',
           leftText: '234 West 42nd Street',
           rightText: '',
-        ),
+        ),  SizedBox(
+          height: 12.h,
+        ),       const Review(),
+
         SizedBox(
           height: 24.h,
         ),
@@ -84,10 +87,9 @@ class AppointmentInfoWidget extends StatelessWidget {
                 ),
                 child: ReviewBottomSheet(
                   onSubmit: (title, description, rating) {
-                    // Handle the review submission here
-                    print('Rating: $rating');
-                    print('Title: $title');
-                    print('Description: $description');
+                    log('Rating: $rating');
+                    log('Title: $title');
+                    log('Description: $description');
                   },
                 ),
               ),
@@ -97,11 +99,12 @@ class AppointmentInfoWidget extends StatelessWidget {
         SizedBox(
           height: 24.h,
         ),
-
-        CustomButton(     text: 'Join Call',
+        CustomButton(
+          text: 'Join Call',
           backgroundColor: ColorsManager.primary,
           textColor: ColorsManager.white,
-          onTap: () {},),
+          onTap: () {},
+        ),
         SizedBox(
           height: 24.h,
         ),

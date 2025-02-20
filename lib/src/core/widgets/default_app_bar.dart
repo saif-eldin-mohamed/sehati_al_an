@@ -43,15 +43,17 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
             )
-          : SizedBox(
+          : const SizedBox(
               width: 0,
             ),
       actions: actions,
-      title: Text(
-        title,
-        style: TextStylesManager.bold16,
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
+      title: Center(
+        child: Text(
+          title,
+          style: TextStylesManager.bold16,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
       ),
     );
   }

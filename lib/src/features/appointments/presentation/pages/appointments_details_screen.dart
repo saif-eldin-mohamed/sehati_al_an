@@ -14,7 +14,7 @@ class AppointmentsDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DefaultAppBar(
+      appBar: const DefaultAppBar(
         title: 'Details',
       ),
       body: Padding(
@@ -23,11 +23,13 @@ class AppointmentsDetailsScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              DoctorCard(appointment: StaticData.appointments.first,),
+              DoctorCard(
+                appointment: StaticData.appointments.first,
+              ),
               SizedBox(
                 height: 24.h,
               ),
-              AppointmentInfoWidget()
+              const AppointmentInfoWidget()
             ],
           ),
         ),
