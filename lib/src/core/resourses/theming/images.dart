@@ -10,6 +10,8 @@ class ImagesManager {
   static const String appoimentEmptyImg = '$imagesBaseUrl/appoiment_empty.png';
   static const String locationImg = '$imagesBaseUrl/location on map.png';
   static const String vISAImg = '$imagesBaseUrl/VISA.png';
+  static const String noNotificationImg = '$imagesBaseUrl/no_notification.png';
+  static const String videoCallImg = '$imagesBaseUrl/Video Call.png';
 
   static const String logoImg = '$imagesBaseUrl/logo_app.png';
   static const String backGroundSplashImg =

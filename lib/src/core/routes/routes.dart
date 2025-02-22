@@ -11,6 +11,7 @@ class Routes {
   static const String appointmentsDetailsScreen = '/appointmentsDetailsScreen';
   static const String signUpScreen = '/signUpScreen';
   static const String forgetPasswordScreen = '/forgetPasswordScreen';
+  static const String videoCallScreen = '/videoCallScreen';
   static const String appLayOut = '/appLayOut';
   static const String onBoardingScreen = '/onBoardingScreen';
 }

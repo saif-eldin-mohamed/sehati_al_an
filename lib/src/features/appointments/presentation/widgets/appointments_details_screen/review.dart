@@ -21,7 +21,7 @@ class Review extends StatelessWidget {
         Row(
           children: List.generate(
             5,
-                (index) => const Icon(
+            (index) => const Icon(
               Icons.star,
               color: Colors.amber,
               size: 24,

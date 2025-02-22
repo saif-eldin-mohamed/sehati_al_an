@@ -10,18 +10,18 @@ import '../../../../../core/widgets/status_button.dart';
 import '../../../../appointments/data/models/appointment_model.dart';
 import '../../../../appointments/domain/entities/appointment_entity.dart';
 
-
-
 class HomeUpcomingAppointmentCard extends StatefulWidget {
   final Appointment appointment;
 
   const HomeUpcomingAppointmentCard({super.key, required this.appointment});
 
   @override
-  State<HomeUpcomingAppointmentCard> createState() => _HomeUpcomingAppointmentCardState();
+  State<HomeUpcomingAppointmentCard> createState() =>
+      _HomeUpcomingAppointmentCardState();
 }
 
-class _HomeUpcomingAppointmentCardState extends State<HomeUpcomingAppointmentCard> {
+class _HomeUpcomingAppointmentCardState
+    extends State<HomeUpcomingAppointmentCard> {
   bool isHovered = false;
 
   @override

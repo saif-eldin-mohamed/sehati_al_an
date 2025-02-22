@@ -6,6 +6,7 @@ import 'package:sehati_al_an_app/src/core/widgets/custom_button.dart';
 import 'package:sehati_al_an_app/src/features/appointments/presentation/widgets/appointments_details_screen/review.dart';
 import '../../../../../core/resourses/theming/colors.dart';
 import '../../../../../core/resourses/theming/images.dart';
+import '../../../../../core/routes/routes.dart';
 import '../../../../../core/widgets/appointment_info.dart';
 import '../../../../../core/widgets/review_dialog.dart';
 
@@ -47,10 +48,11 @@ class AppointmentInfoWidget extends StatelessWidget {
           title: 'Location',
           leftText: '234 West 42nd Street',
           rightText: '',
-        ),  SizedBox(
+        ),
+        SizedBox(
           height: 12.h,
-        ),       const Review(),
-
+        ),
+        const Review(),
         SizedBox(
           height: 24.h,
         ),
@@ -103,7 +105,9 @@ class AppointmentInfoWidget extends StatelessWidget {
           text: 'Join Call',
           backgroundColor: ColorsManager.primary,
           textColor: ColorsManager.white,
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, Routes.videoCallScreen);
+          },
         ),
         SizedBox(
           height: 24.h,

@@ -5,6 +5,7 @@ import 'package:sehati_al_an_app/src/core/routes/routes.dart';
 import '../../../app.dart';
 import '../../features/app_lay_out/app_lay_out.dart';
 import '../../features/appointments/presentation/pages/appointments_details_screen.dart';
+import '../../features/appointments/presentation/pages/video_call_screen.dart';
 import '../../features/auth/presentation/pages/forget_password.dart';
 import '../../features/auth/presentation/pages/sign_in.dart';
 import '../../features/auth/presentation/pages/sign_up.dart';
@@ -27,6 +28,8 @@ class AppRouter {
       case Routes.appointmentsDetailsScreen:
         return MaterialPageRoute(
             builder: (_) => const AppointmentsDetailsScreen());
+      case Routes.videoCallScreen:
+        return MaterialPageRoute(builder: (_) => const VideoCallScreen());
       case Routes.appLayOut:
         return MaterialPageRoute(builder: (_) => const AppLayOut());
       default:

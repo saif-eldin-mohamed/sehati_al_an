@@ -63,7 +63,4 @@ class AppointmentInfo extends StatelessWidget {
       ),
     );
   }
-
-
-
 }

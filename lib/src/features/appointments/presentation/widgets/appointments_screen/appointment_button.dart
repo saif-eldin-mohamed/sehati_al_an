@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/helpers/enums.dart';
 import '../../../../../core/resourses/theming/colors.dart';
+import '../../../../../core/routes/routes.dart';
 import '../../../data/models/appointment_model.dart';
 
 // Appointment Button Model
@@ -32,7 +33,7 @@ class AppointmentActions {
     }
 
     // Handle primary action based on appointment type
-    _addPrimaryActionButton(appointment, buttons, handleNavigation);
+    _addPrimaryActionButton(appointment, buttons, handleNavigation, context);
 
     // Add review/cancel button based on status
     _addSecondaryActionButton(appointment, buttons, context);
@@ -44,6 +45,7 @@ class AppointmentActions {
     Appointment appointment,
     List<AppointmentButton> buttons,
     Function(String) handleNavigation,
+    BuildContext context,
   ) {
     switch (appointment.type) {
       case AppointmentType.video:
@@ -52,7 +54,9 @@ class AppointmentActions {
             text: 'Join Call',
             backgroundColor: ColorsManager.primary,
             textColor: ColorsManager.white,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, Routes.videoCallScreen);
+            },
           ),
         );
         break;

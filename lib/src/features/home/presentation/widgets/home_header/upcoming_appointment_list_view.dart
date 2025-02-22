@@ -5,7 +5,6 @@ import '../../../../appointments/domain/entities/appointment_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class HomeAppointmentListView extends StatelessWidget {
   const HomeAppointmentListView({super.key});
 
@@ -21,7 +20,7 @@ class HomeAppointmentListView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: List.generate(
                 StaticData.appointments.length,
-                    (index) => Padding(
+                (index) => Padding(
                   padding: EdgeInsets.only(right: 8.w),
                   child: SizedBox(
                     width: 300.w,
