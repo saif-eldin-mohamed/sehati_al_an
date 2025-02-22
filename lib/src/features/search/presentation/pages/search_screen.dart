@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/resourses/theming/colors.dart';
 import '../../../../core/resourses/theming/styles.dart';
 import '../../../../core/resourses/theming/images.dart';
+import '../../../../core/widgets/default_app_bar.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -11,21 +12,9 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Dentistry',
-          style: TextStylesManager.extraBold20.copyWith(
-            color: ColorsManager.primary,
-          ),
-        ),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.white,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(20),
-          ),
-        ),
+      appBar: const DefaultAppBar(title: 'Dentistry',
+        showLeading: false,
+
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),

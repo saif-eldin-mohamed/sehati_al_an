@@ -29,7 +29,7 @@ class _AppLayOutState extends State<AppLayOut> {
     const AppointmentsScreen(),
     const SearchScreen(),
     const NotificationScreen(),
-    EmptyAppointmentsScreen()
+    const EmptyAppointmentsScreen()
   ];
 
   Future<void> _handleProfileNavigation() async {

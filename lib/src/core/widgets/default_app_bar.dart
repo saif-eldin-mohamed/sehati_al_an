@@ -17,43 +17,42 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double elevation;
   final double scrolledUnderElevation;
   final bool showLeading;
+
   @override
   Widget build(BuildContext context) {
     final bool isArabic = Directionality.of(context) == TextDirection.rtl;
 
     return AppBar(
       backgroundColor: ColorsManager.white,
-      centerTitle: false,
+      centerTitle: true,
       titleSpacing: 0,
       elevation: elevation,
       scrolledUnderElevation: scrolledUnderElevation,
       surfaceTintColor: Colors.transparent,
       leadingWidth: 56,
-      leading: showLeading == true
+      leading: showLeading
           ? GestureDetector(
-              behavior: HitTestBehavior.opaque,
-              onTap: () => Navigator.pop(context),
-              child: Container(
-                padding: const EdgeInsetsDirectional.only(start: 16),
-                alignment: AlignmentDirectional.centerStart,
-                child: Icon(
-                  isArabic ? Icons.arrow_back_ios_new : Icons.arrow_back_ios,
-                  color: Colors.black,
-                  size: 24,
-                ),
-              ),
-            )
-          : const SizedBox(
-              width: 0,
-            ),
-      actions: actions,
-      title: Center(
-        child: Text(
-          title,
-          style: TextStylesManager.bold16,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
+        behavior: HitTestBehavior.opaque,
+        onTap: () => Navigator.pop(context),
+        child: Container(
+          padding: const EdgeInsetsDirectional.only(start: 16),
+          alignment: AlignmentDirectional.centerStart,
+          child: Icon(
+            isArabic ? Icons.arrow_back_ios_new : Icons.arrow_back_ios,
+            color: Colors.black,
+            size: 24,
+          ),
         ),
+      )
+          : const SizedBox(width: 0),
+      actions: actions,
+      title: Text(
+        title,
+        style: TextStylesManager.extraBold20.copyWith(
+          color: ColorsManager.primary,
+        ),
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }
