@@ -71,6 +71,7 @@ dev_dependencies:
   toastification: ^2.3.0
   animate_do: ^4.0.1
   animations: ^2.0.8
+  lucide_icons: ^0.257.0
 
   #  google_maps_flutter: ^2.6.1
 #  geocoding: ^3.0.0

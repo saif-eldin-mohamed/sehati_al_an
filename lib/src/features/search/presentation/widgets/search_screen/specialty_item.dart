@@ -1,4 +1,3 @@
-// lib/features/search/presentation/widgets/specialty_item.dart
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../core/resourses/theming/colors.dart';
 import '../../../../../core/resourses/theming/styles.dart';
+import '../../../../../core/routes/routes.dart';
 
 class SpecialtyItem extends StatelessWidget {
   final String imagePath;
@@ -37,7 +37,8 @@ class SpecialtyItem extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           borderRadius: BorderRadius.circular(15.r),
-          onTap: () {},
+          onTap: () {        Navigator.pushNamed(context, Routes.searchResultsCategoriesScreen);
+          },
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 16.w,

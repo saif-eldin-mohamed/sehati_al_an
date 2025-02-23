@@ -10,6 +10,7 @@ import '../../features/auth/presentation/pages/forget_password.dart';
 import '../../features/auth/presentation/pages/sign_in.dart';
 import '../../features/auth/presentation/pages/sign_up.dart';
 import '../../features/onBoarding/presentation/screens/on_boarding_screen.dart';
+import '../../features/search/presentation/pages/search_reasults_categories.dart';
 import '../../features/splash_screen/splash_screen.dart';
 
 class AppRouter {
@@ -29,7 +30,8 @@ class AppRouter {
         return MaterialPageRoute(
             builder: (_) => const AppointmentsDetailsScreen());
       case Routes.videoCallScreen:
-        return MaterialPageRoute(builder: (_) => const VideoCallScreen());
+        return MaterialPageRoute(builder: (_) => const VideoCallScreen());      case Routes.searchResultsCategoriesScreen:
+      return MaterialPageRoute(builder: (_) =>  SearchResultsCategories());
       case Routes.appLayOut:
         return MaterialPageRoute(builder: (_) => const AppLayOut());
       default:

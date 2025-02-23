@@ -11,10 +11,10 @@ class CustomCategoryCard extends StatelessWidget {
   final String imagePath;
 
   const CustomCategoryCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.imagePath,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
