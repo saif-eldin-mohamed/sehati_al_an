@@ -32,18 +32,18 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: 56,
       leading: showLeading
           ? GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () => Navigator.pop(context),
-        child: Container(
-          padding: const EdgeInsetsDirectional.only(start: 16),
-          alignment: AlignmentDirectional.centerStart,
-          child: Icon(
-            isArabic ? Icons.arrow_back_ios_new : Icons.arrow_back_ios,
-            color: Colors.black,
-            size: 24,
-          ),
-        ),
-      )
+              behavior: HitTestBehavior.opaque,
+              onTap: () => Navigator.pop(context),
+              child: Container(
+                padding: const EdgeInsetsDirectional.only(start: 16),
+                alignment: AlignmentDirectional.centerStart,
+                child: Icon(
+                  isArabic ? Icons.arrow_back_ios_new : Icons.arrow_back_ios,
+                  color: Colors.black,
+                  size: 24,
+                ),
+              ),
+            )
           : const SizedBox(width: 0),
       actions: actions,
       title: Text(

@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resourses/lanuages_strings.dart';
 import '../../../../core/resourses/theming/colors.dart';
 import '../../../../core/widgets/section_header.dart';
-import '../widgets/home_header/upcoming_appointment_card.dart';
 import '../widgets/home_header/custom_category_card.dart';
 import '../widgets/home_header/doctor_appointment_consultation_card_list_view.dart';
 import '../widgets/home_header/header_container.dart';

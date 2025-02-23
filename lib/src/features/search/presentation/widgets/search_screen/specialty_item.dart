@@ -63,7 +63,7 @@ class SpecialtyItem extends StatelessWidget {
                   child: Text(
                     title,
                     style: TextStylesManager.regular16.copyWith(
-                      color: Colors.black87,
+                      color: ColorsManager.primary,
                     ),
                   ),
                 ),

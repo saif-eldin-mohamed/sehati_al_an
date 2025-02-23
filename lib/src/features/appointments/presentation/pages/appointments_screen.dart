@@ -13,13 +13,10 @@ class AppointmentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-
-
-      const DefaultAppBar(title: 'Appointments' ,        showLeading: false,
+      appBar: const DefaultAppBar(
+        title: 'Appointments',
+        showLeading: false,
       ),
-
-
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),

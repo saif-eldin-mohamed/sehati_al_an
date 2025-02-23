@@ -1,12 +1,20 @@
-// lib/features/search/presentation/widgets/search_textfield.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sehati_al_an_app/src/core/helpers/responsive_font_size.dart';
 
 import '../../../../../core/resourses/theming/colors.dart';
 
-class SearchTextField extends StatelessWidget {
-  const SearchTextField({super.key});
+class CustomSearchField extends StatelessWidget {
+  final String hintText;
+  final TextEditingController? controller;
+  final ValueChanged<String>? onChanged;
+
+  const CustomSearchField({
+    super.key,
+    this.hintText = 'Search for doctor, specialty',
+    this.controller,
+    this.onChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +32,13 @@ class SearchTextField extends StatelessWidget {
         ],
       ),
       child: TextField(
+        controller: controller,
+        onChanged: onChanged,
         decoration: InputDecoration(
-          hintText: 'Search for doctor, specialty',
+          hintText: hintText,
           hintStyle: TextStyle(
-            color: Colors.grey[400],
-            fontSize: 14.sp,
+            color: ColorsManager.grey,
+            fontSize: 16.responsive,
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.r),
