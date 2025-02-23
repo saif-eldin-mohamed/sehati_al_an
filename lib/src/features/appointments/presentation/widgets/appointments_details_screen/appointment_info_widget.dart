@@ -37,7 +37,6 @@ class AppointmentInfoWidget extends StatelessWidget {
         const AppointmentInfo(
           title: 'Payment method',
           leftText: 'Pay by',
-          // leftImage: ImagesManager.vISAImg, // صورة أيقونة الفيزا
           rightText: '**** 7766',
           rightImage: ImagesManager.vISAImg,
         ),
