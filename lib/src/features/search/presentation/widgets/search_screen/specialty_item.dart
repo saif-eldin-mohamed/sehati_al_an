@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -37,7 +36,8 @@ class SpecialtyItem extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           borderRadius: BorderRadius.circular(15.r),
-          onTap: () {        Navigator.pushNamed(context, Routes.searchResultsCategoriesScreen);
+          onTap: () {
+            Navigator.pushNamed(context, Routes.searchResultsCategoriesScreen);
           },
           child: Padding(
             padding: EdgeInsets.symmetric(

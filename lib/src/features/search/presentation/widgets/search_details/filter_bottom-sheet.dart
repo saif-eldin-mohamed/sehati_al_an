@@ -60,7 +60,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                 children: [
                   TextButton.icon(
                     onPressed: _resetFilters,
-                    icon: const Icon(Icons.refresh, color: ColorsManager.primary, size: 20),
+                    icon: const Icon(Icons.refresh,
+                        color: ColorsManager.primary, size: 20),
                     label: Text(
                       'Reset',
                       style: TextStylesManager.bold16.copyWith(
@@ -140,7 +141,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
           // Apply button
           CustomButton(
             onTap: () {
-              widget.onApplyFilter(selectedSort, selectedSubspecialty, selectedType);
+              widget.onApplyFilter(
+                  selectedSort, selectedSubspecialty, selectedType);
               Navigator.pop(context);
             },
             text: 'Show Results (120)',
@@ -225,15 +227,17 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
           color: Colors.grey.shade600,
         ),
       ),
-      items: items.map((item) => DropdownMenuItem(
-        value: item,
-        child: Text(
-          item,
-          style: TextStylesManager.semiBold16.copyWith(
-            color: ColorsManager.primary,
-          ),
-        ),
-      )).toList(),
+      items: items
+          .map((item) => DropdownMenuItem(
+                value: item,
+                child: Text(
+                  item,
+                  style: TextStylesManager.semiBold16.copyWith(
+                    color: ColorsManager.primary,
+                  ),
+                ),
+              ))
+          .toList(),
       onChanged: onChanged,
       icon: const Icon(Icons.arrow_drop_down, color: ColorsManager.primary),
       dropdownColor: Colors.white,

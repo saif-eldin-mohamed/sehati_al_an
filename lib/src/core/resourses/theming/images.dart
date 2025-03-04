@@ -39,4 +39,12 @@ class SvgsManager {
   static const String doctorIconSvg = '$iconsBaseUrl/doctor_icon.svg';
   static const String videoCameraSvg = '$iconsBaseUrl/video camera.svg';
   static const String commentsSvg = '$iconsBaseUrl/comments.svg';
+  static const String profile2Svg = '$iconsBaseUrl/profile.svg';
+  static const String favoriteSvg = '$iconsBaseUrl/favorite.svg';
+  static const String comments2Svg = '$iconsBaseUrl/comments2.svg';
+  static const String settingSvg = '$iconsBaseUrl/setting.svg';
+  static const String editTextSvg = '$iconsBaseUrl/edit_text.svg';
+  static const String favorite1Svg = '$iconsBaseUrl/favorite 1.svg';
+  static const String logout1Svg = '$iconsBaseUrl/logout 1.svg';
+  static const String help1Svg = '$iconsBaseUrl/help 1.svg';
 }

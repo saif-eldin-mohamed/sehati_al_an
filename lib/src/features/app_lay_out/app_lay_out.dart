@@ -12,6 +12,7 @@ import 'package:animations/animations.dart';
 
 import '../notification/presentation/pages/empty_notification_screen.dart';
 import '../notification/presentation/pages/notification_screen.dart';
+import '../profile/presentation/pages/profile.dart';
 import '../search/presentation/pages/search_screen.dart';
 
 class AppLayOut extends StatefulWidget {
@@ -29,7 +30,7 @@ class _AppLayOutState extends State<AppLayOut> {
     const AppointmentsScreen(),
     const SearchScreen(),
     const NotificationScreen(),
-    const EmptyAppointmentsScreen()
+    const ProfileScreen()
   ];
 
   Future<void> _handleProfileNavigation() async {

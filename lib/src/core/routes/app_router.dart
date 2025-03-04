@@ -4,11 +4,15 @@ import 'package:sehati_al_an_app/src/core/routes/routes.dart';
 
 import '../../../app.dart';
 import '../../features/app_lay_out/app_lay_out.dart';
+import '../../features/appointment_booking/presentation/pages/main_appoiment_booking.dart';
 import '../../features/appointments/presentation/pages/appointments_details_screen.dart';
+import '../../features/appointments/presentation/pages/appointments_screen.dart';
 import '../../features/appointments/presentation/pages/video_call_screen.dart';
 import '../../features/auth/presentation/pages/forget_password.dart';
 import '../../features/auth/presentation/pages/sign_in.dart';
 import '../../features/auth/presentation/pages/sign_up.dart';
+import '../../features/home/presentation/screens/all_categories_specialties_screen.dart';
+import '../../features/home/presentation/screens/all_doctor_appointment_consultation_screen.dart';
 import '../../features/onBoarding/presentation/screens/on_boarding_screen.dart';
 import '../../features/search/presentation/pages/search_reasults_categories.dart';
 import '../../features/splash_screen/splash_screen.dart';
@@ -30,10 +34,22 @@ class AppRouter {
         return MaterialPageRoute(
             builder: (_) => const AppointmentsDetailsScreen());
       case Routes.videoCallScreen:
-        return MaterialPageRoute(builder: (_) => const VideoCallScreen());      case Routes.searchResultsCategoriesScreen:
-      return MaterialPageRoute(builder: (_) =>  SearchResultsCategories());
+        return MaterialPageRoute(builder: (_) => const VideoCallScreen());
+      case Routes.searchResultsCategoriesScreen:
+        return MaterialPageRoute(
+            builder: (_) => const SearchResultsCategories());
       case Routes.appLayOut:
         return MaterialPageRoute(builder: (_) => const AppLayOut());
+      case Routes.mainAppoimentBooking:
+        return MaterialPageRoute(builder: (_) => const MainAppoimentBooking());
+      case Routes.allCategoriesSpecialtiesScreen:
+        return MaterialPageRoute(
+            builder: (_) => const AllCategoriesSpecialtiesScreen());
+      case Routes.appointmentsScreen:
+        return MaterialPageRoute(builder: (_) => const AppointmentsScreen());
+      case Routes.allDoctorAppointmentConsultationScreen:
+        return MaterialPageRoute(
+            builder: (_) => const AllDoctorAppointmentConsultationScreen());
       default:
         return null;
     }

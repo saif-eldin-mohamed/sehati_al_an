@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:sehati_al_an_app/src/core/resourses/theming/styles.dart';
-import '../../../../../core/resourses/lanuages_strings.dart';
-import '../../../../../core/resourses/theming/images.dart';
+import '../resourses/lanuages_strings.dart';
+import '../resourses/theming/images.dart';
 
 class CustomCategoryCard extends StatelessWidget {
   final String title;
@@ -44,34 +44,6 @@ class CustomCategoryCard extends StatelessWidget {
                 style: TextStylesManager.regular12),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class CategoriesRow extends StatelessWidget {
-  const CategoriesRow({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          CustomCategoryCard(
-              title: AppStrings.dentistry.tr(),
-              imagePath: SvgsManager.DentistrySvg),
-          CustomCategoryCard(
-              title: AppStrings.psychiatry.tr(),
-              imagePath: SvgsManager.psychiatrySvg),
-          CustomCategoryCard(
-              title: AppStrings.neurology.tr(),
-              imagePath: SvgsManager.neurologySvg),
-          CustomCategoryCard(
-              title: AppStrings.internal_diseases.tr(),
-              imagePath: SvgsManager.internalDiseasesSvg),
-        ],
       ),
     );
   }

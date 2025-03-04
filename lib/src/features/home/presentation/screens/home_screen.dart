@@ -4,8 +4,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resourses/lanuages_strings.dart';
 import '../../../../core/resourses/theming/colors.dart';
+import '../../../../core/routes/routes.dart';
 import '../../../../core/widgets/section_header.dart';
-import '../widgets/home_header/custom_category_card.dart';
+import '../../../../core/widgets/custom_category_card.dart';
+import '../widgets/home_header/categories_list_view.dart';
 import '../widgets/home_header/doctor_appointment_consultation_card_list_view.dart';
 import '../widgets/home_header/header_container.dart';
 import '../widgets/home_header/upcoming_appointment_list_view.dart';
@@ -24,22 +26,30 @@ class HomeScreen extends StatelessWidget {
             SectionHeader(
               title: AppStrings.most_popular_specialties,
               buttonText: AppStrings.view_all,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(
+                    context, Routes.allCategoriesSpecialtiesScreen);
+              },
             ),
             SizedBox(
               height: 16.h,
             ),
-            const CategoriesRow(),
+            const CategoriesList(),
             SectionHeader(
               title: AppStrings.book_a_consultation_again,
               buttonText: AppStrings.view_all,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(
+                    context, Routes.allDoctorAppointmentConsultationScreen);
+              },
             ),
             const DoctorAppointmentConsultationCardListView(),
             SectionHeader(
               title: AppStrings.upcoming_appointments,
               buttonText: AppStrings.view_all,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.appointmentsScreen);
+              },
             ),
             SizedBox(
               height: 16.h,

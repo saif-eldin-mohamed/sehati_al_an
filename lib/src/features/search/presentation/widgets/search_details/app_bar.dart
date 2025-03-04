@@ -4,7 +4,8 @@ import '../../../../../core/resourses/theming/colors.dart';
 import '../../../../../core/resourses/theming/styles.dart';
 import 'filter_bottom-sheet.dart';
 
-class AppBarSearchDetails extends StatelessWidget implements PreferredSizeWidget {
+class AppBarSearchDetails extends StatelessWidget
+    implements PreferredSizeWidget {
   const AppBarSearchDetails({super.key});
 
   void _showFilterBottomSheet(BuildContext context) {

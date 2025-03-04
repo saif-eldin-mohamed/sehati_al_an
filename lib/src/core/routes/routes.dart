@@ -12,7 +12,14 @@ class Routes {
   static const String signUpScreen = '/signUpScreen';
   static const String forgetPasswordScreen = '/forgetPasswordScreen';
   static const String videoCallScreen = '/videoCallScreen';
-  static const String searchResultsCategoriesScreen = '/searchResultsCategoriesScreen';
+  static const String searchResultsCategoriesScreen =
+      '/searchResultsCategoriesScreen';
   static const String appLayOut = '/appLayOut';
   static const String onBoardingScreen = '/onBoardingScreen';
+  static const String mainAppoimentBooking = '/mainAppoimentBooking';
+  static const String allCategoriesSpecialtiesScreen =
+      '/allCategoriesSpecialtiesScreen';
+  static const String appointmentsScreen = '/appointmentsScreen';
+  static const String allDoctorAppointmentConsultationScreen =
+      '/allDoctorAppointmentConsultationScreen';
 }
